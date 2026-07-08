@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>佳赫稅務 - 商業登記,順便讓客人找得到你</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #F5F0E8;
+    --paper: #FBF8F2;
+    --ink: #2B2420;
+    --ink-soft: #6B5F52;
+    --gold: #C8872A;
+    --gold-deep: #96631C;
+    --line: #DDD3C0;
+    --pin-gray: #B9AF9E;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 300;
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 0 4rem;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 0 0 2.5rem;
+    text-align: center;
+  }
+  .hero-band{
+    background: var(--gold);
+    padding: 0.9rem 1.75rem;
+  }
+  .eyebrow{
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--paper);
+    text-transform: uppercase;
+  }
+  .headline{
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 1.8rem 1.75rem 0;
+  }
+
+  /* ---------- SIGNATURE VISUAL: 登記進度推進,地圖上蹦出新店面 ---------- */
+  .stage{
+    width: 100%;
+    max-width: 440px;
+    margin: 2.4rem auto 0.5rem;
+    padding: 0 1rem;
+  }
+  .progress-row{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0 0.2rem;
+  }
+  .progress-label{
+    font-family: 'Noto Serif TC', serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .progress-pct{
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 16px;
+  }
+  .pct{
+    position: absolute;
+    top: 0; right: 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold-deep);
+    opacity: 0;
+  }
+  .progress-track{
+    height: 6px;
+    background: var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 0.5rem 0.2rem 0;
+  }
+  .progress-fill{
+    height: 100%;
+    width: 0%;
+    background: var(--gold);
+    animation: progressFill 8s ease-in-out infinite;
+  }
+  .map-svg{ width: 100%; height: auto; display: block; margin-top: 1rem; border-radius: 6px; overflow: hidden; }
+  .map-land{ fill: #F2E6C6; }
+  .road-highway-casing{ stroke: #96AFC6; stroke-width: 11; fill: none; stroke-linecap: round; }
+  .road-highway{ stroke: #BBD1E3; stroke-width: 7; fill: none; stroke-linecap: round; }
+  .road-main-casing{ stroke: #E8B663; stroke-width: 7; fill: none; stroke-linecap: round; }
+  .road-main{ stroke: #FBD98B; stroke-width: 4.5; fill: none; stroke-linecap: round; }
+  .road-local-casing{ stroke: #DCCFA6; stroke-width: 3.5; fill: none; stroke-linecap: round; }
+  .road-local{ stroke: #FFFFFF; stroke-width: 2; fill: none; stroke-linecap: round; }
+  .plot{
+    fill: none;
+    stroke: var(--pin-gray);
+    stroke-width: 1.5;
+    stroke-dasharray: 4 4;
+  }
+  .shop-icon{
+    opacity: 0;
+    transform: scale(0);
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: shopPop 8s ease-in-out infinite;
+  }
+  .people{
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .p1{ animation: people1 8s ease-out infinite; }
+  .p2{ animation: people2 8s ease-out infinite; }
+  .p3{ animation: people3 8s ease-out infinite; }
+
+  @keyframes progressFill{
+    0%, 20% { width: 0%; }
+    38% { width: 30%; }
+    56% { width: 60%; }
+    74%, 100% { width: 100%; }
+  }
+  @keyframes showPct0{
+    0%, 4% { opacity: 0; }
+    6%, 19% { opacity: 1; }
+    21%, 100% { opacity: 0; }
+  }
+  @keyframes showPct30{
+    0%, 21% { opacity: 0; }
+    23%, 37% { opacity: 1; }
+    39%, 100% { opacity: 0; }
+  }
+  @keyframes showPct60{
+    0%, 39% { opacity: 0; }
+    41%, 55% { opacity: 1; }
+    57%, 100% { opacity: 0; }
+  }
+  @keyframes showPct100{
+    0%, 57% { opacity: 0; }
+    59%, 95% { opacity: 1; }
+    97%, 100% { opacity: 0; }
+  }
+  @keyframes shopPop{
+    0%, 73% { opacity: 0; transform: scale(0); }
+    77% { opacity: 1; transform: scale(1.3); }
+    83% { transform: scale(0.9); }
+    88%, 95% { opacity: 1; transform: scale(1); }
+    98%, 100% { opacity: 0; transform: scale(0); }
+  }
+  @keyframes people1{
+    0%, 78% { opacity: 0; transform: translate(-14px, 10px); }
+    83% { opacity: 1; transform: translate(0, 0); }
+    95% { opacity: 1; transform: translate(0, 0); }
+    98%, 100% { opacity: 0; transform: translate(-14px, 10px); }
+  }
+  @keyframes people2{
+    0%, 81% { opacity: 0; transform: translate(14px, 10px); }
+    86% { opacity: 1; transform: translate(0, 0); }
+    95% { opacity: 1; transform: translate(0, 0); }
+    98%, 100% { opacity: 0; transform: translate(14px, 10px); }
+  }
+  @keyframes people3{
+    0%, 84% { opacity: 0; transform: translate(0, 16px); }
+    89% { opacity: 1; transform: translate(0, 0); }
+    95% { opacity: 1; transform: translate(0, 0); }
+    98%, 100% { opacity: 0; transform: translate(0, 16px); }
+  }
+
+  /* ---------- STORY COPY ---------- */
+  .story{
+    padding: 1.5rem 1.75rem 0.5rem;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .story p{
+    margin: 0 0 1.35rem;
+  }
+  .story p:last-child{ margin-bottom: 0; }
+  .story .pivot{
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 500;
+    color: var(--gold-deep);
+  }
+
+  .divider{
+    width: 48px;
+    height: 1px;
+    background: var(--line);
+    margin: 2.4rem auto;
+  }
+
+  /* ---------- OFFER LEDGER ---------- */
+  .offer{
+    margin: 0 1.75rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .offer-head{
+    padding: 1.1rem 1.4rem 0.9rem;
+    background: var(--gold);
+  }
+  .offer-head .label{
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--paper);
+    letter-spacing: 0.08em;
+  }
+  .offer-head .title{
+    font-family: 'Noto Serif TC', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--paper);
+    margin-top: 0.3rem;
+  }
+  .offer-row{
+    display:flex;
+    gap: 1rem;
+    padding: 1.1rem 1.4rem;
+    border-bottom: 1px solid var(--line);
+    border-left: 3px solid var(--gold);
+    align-items: flex-start;
+  }
+  .offer-row:last-child{ border-bottom: none; }
+  .offer-num{
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    color: var(--gold);
+    padding-top: 2px;
+    min-width: 20px;
+  }
+  .offer-body .offer-title{
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .offer-body .offer-desc{
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin-top: 0.2rem;
+    line-height: 1.7;
+  }
+
+  /* ---------- STAT STAMP ---------- */
+  .stat{
+    margin: 2.6rem 1.75rem 0;
+    text-align: center;
+  }
+  .stat-number{
+    font-family: 'Space Mono', monospace;
+    font-size: 54px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: -0.02em;
+  }
+  .stat-unit{
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-left: 4px;
+  }
+  .stat-label{
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin-top: 0.3rem;
+  }
+
+  /* ---------- CLOSING ---------- */
+  .closing{
+    padding: 2.6rem 1.75rem 0;
+    text-align: center;
+  }
+  .closing p{
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+  .brand-line{
+    margin-top: 1.8rem;
+    background: var(--gold);
+    padding: 1rem 1.4rem;
+    border-radius: 4px;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 14px;
+    color: var(--paper);
+  }
+  .brand-line .line-id{
+    display:block;
+    margin-top: 0.4rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 12.5px;
+    color: var(--paper);
+  }
+
+  @media (max-width: 420px){
+    .headline{ font-size: 22px; }
+    .stat-number{ font-size: 44px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="hero-band">
+      <div class="eyebrow">佳赫稅務 — 商業登記方案</div>
+    </div>
+    <h1 class="headline">登記辦好了,<br>客人在地圖上找得到你嗎?</h1>
+  </div>
+
+  <div class="stage">
+    <div class="progress-row">
+      <span class="progress-label">設立登記</span>
+      <span class="progress-pct">
+        <span class="pct pct0" style="animation:showPct0 8s ease-in-out infinite;">0%</span>
+        <span class="pct pct30" style="animation:showPct30 8s ease-in-out infinite;">30%</span>
+        <span class="pct pct60" style="animation:showPct60 8s ease-in-out infinite;">60%</span>
+        <span class="pct pct100" style="animation:showPct100 8s ease-in-out infinite;">100%</span>
+      </span>
+    </div>
+    <div class="progress-track"><div class="progress-fill"></div></div>
+
+    <svg class="map-svg" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="類似Google地圖風格的街道背景,登記進度推進到100%時,地圖上蹦出新店面,並有人潮聚集過去的示意圖">
+      <rect class="map-land" x="0" y="0" width="400" height="240"/>
+
+      <path class="road-highway-casing" d="M-10 0 L120 240"/>
+      <path class="road-highway" d="M-10 0 L120 240"/>
+
+      <path class="road-main-casing" d="M0 175 C90 178, 230 162, 400 172"/>
+      <path class="road-main" d="M0 175 C90 178, 230 162, 400 172"/>
+      <path class="road-main-casing" d="M0 222 C110 227, 260 215, 400 220"/>
+      <path class="road-main" d="M0 222 C110 227, 260 215, 400 220"/>
+
+      <path class="road-local-casing" d="M150 -10 L165 250"/>
+      <path class="road-local" d="M150 -10 L165 250"/>
+      <path class="road-local-casing" d="M230 -10 L215 250"/>
+      <path class="road-local" d="M230 -10 L215 250"/>
+      <path class="road-local-casing" d="M320 -10 L300 130"/>
+      <path class="road-local" d="M320 -10 L300 130"/>
+      <path class="road-local-casing" d="M-10 60 L400 45"/>
+      <path class="road-local" d="M-10 60 L400 45"/>
+      <path class="road-local-casing" d="M-10 105 L200 98 L400 118"/>
+      <path class="road-local" d="M-10 105 L200 98 L400 118"/>
+      <path class="road-local-casing" d="M60 175 L75 250"/>
+      <path class="road-local" d="M60 175 L75 250"/>
+      <path class="road-local-casing" d="M340 172 L355 250"/>
+      <path class="road-local" d="M340 172 L355 250"/>
+
+      <rect class="plot" x="252" y="52" width="62" height="50" rx="3"/>
+
+      <g class="shop-icon">
+        <rect x="260" y="74" width="46" height="28" fill="#C8872A"/>
+        <path d="M256 74 L283 52 L310 74 Z" fill="#96631C"/>
+        <rect x="278" y="83" width="12" height="19" fill="#FBF8F2"/>
+        <rect x="264" y="80" width="8" height="8" fill="#FBF8F2"/>
+        <rect x="296" y="80" width="8" height="8" fill="#FBF8F2"/>
+      </g>
+
+      <g class="people p1">
+        <circle cx="234" cy="115" r="5" fill="#6B5F52"/>
+        <path d="M227 130 Q234 118 241 130 Z" fill="#6B5F52"/>
+      </g>
+      <g class="people p2">
+        <circle cx="332" cy="115" r="5" fill="#6B5F52"/>
+        <path d="M325 130 Q332 118 339 130 Z" fill="#6B5F52"/>
+      </g>
+      <g class="people p3">
+        <circle cx="283" cy="130" r="5" fill="#6B5F52"/>
+        <path d="M276 145 Q283 133 290 145 Z" fill="#6B5F52"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="story">
+    <p>去年,50位剛決定開店的老闆,自己去申請設立登記。</p>
+    <p>流程不難,難的是申請完之後~店開了,店卻不在地圖上。客人在Google搜尋附近店家,你的招牌不存在。</p>
+    <p class="pivot">商業登記辦好,Google Map同步上線,店的照片也一起就位。開店那天,客人已經找得到你。</p>
+    <p>這套流程,去年陪50組老闆走過第一步。</p>
+    <p>準備開店,或正在辦設立登記,可以先問問看,這步驟現在包不包含在裡面。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="offer">
+    <div class="offer-head">
+      <div class="label">方案內容</div>
+      <div class="title">商業登記,一次到位</div>
+    </div>
+    <div class="offer-row">
+      <div class="offer-num">01</div>
+      <div class="offer-body">
+        <div class="offer-title">商業設立登記</div>
+        <div class="offer-desc">找佳赫稅務辦理營業登記,流程與文件由專業處理。</div>
+      </div>
+    </div>
+    <div class="offer-row">
+      <div class="offer-num">02</div>
+      <div class="offer-body">
+        <div class="offer-title">Google Map商家設定</div>
+        <div class="offer-desc">商家建檔、商品上架、服務項目上架,取得基礎SEO成效。</div>
+      </div>
+    </div>
+    <div class="offer-row">
+      <div class="offer-num">03</div>
+      <div class="offer-body">
+        <div class="offer-title">商品現場拍攝</div>
+        <div class="offer-desc">原則5至10組商品,1.5至2小時內完成拍攝。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stat">
+    <span class="stat-number">50</span><span class="stat-unit">組</span>
+    <div class="stat-label">2025年,已陪這些老闆走過開店第一步</div>
+  </div>
+
+  <div class="closing">
+    <p>準備開店,或正在辦設立登記,可以先問問看,這步驟現在包不包含在裡面。</p>
+    <div class="brand-line">
+      佳赫稅務聯合記帳士事務所
+      <span class="line-id">lin.ee/SHzg03x</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
