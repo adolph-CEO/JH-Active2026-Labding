@@ -342,11 +342,14 @@
   }
   .gallery-grid{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 3px;
     background: var(--line);
     border: 1px solid var(--line);
     border-top: none;
+  }
+  @media (max-width: 480px){
+    .gallery-grid{ grid-template-columns: repeat(3, 1fr); }
   }
   .gallery-item{
     position: relative;
@@ -504,127 +507,97 @@
     </div>
     <div class="gallery-grid">
       <div class="gallery-item">
-        <img src="photos/01.jpg" alt="佳赫稅務客戶店面實拍01" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 L24 8 L40 20 Z" fill="#96631C"/><rect x="10" y="20" width="28" height="20" fill="#C8872A"/><rect x="20" y="28" width="8" height="12" fill="#FBF8F2"/><rect x="13" y="24" width="6" height="6" fill="#FBF8F2"/><rect x="29" y="24" width="6" height="6" fill="#FBF8F2"/></svg></div>
+        <img src="photos/jh-01.png" alt="佳赫稅務客戶餐飲實拍01" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/02.jpg" alt="佳赫稅務客戶餐點實拍02" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="15" fill="none" stroke="#C8872A" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="#96631C" stroke-width="1.5"/><line x1="10" y1="10" x2="15" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="10" x2="33" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <img src="photos/jh-04.png" alt="佳赫稅務客戶餐飲實拍02" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/03.jpg" alt="佳赫稅務客戶店面實拍03" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 L24 8 L40 20 Z" fill="#96631C"/><rect x="10" y="20" width="28" height="20" fill="#C8872A"/><rect x="20" y="28" width="8" height="12" fill="#FBF8F2"/><rect x="13" y="24" width="6" height="6" fill="#FBF8F2"/><rect x="29" y="24" width="6" height="6" fill="#FBF8F2"/></svg></div>
+        <img src="photos/jh-11.png" alt="佳赫稅務客戶餐飲實拍03" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/04.jpg" alt="佳赫稅務客戶餐點實拍04" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="15" fill="none" stroke="#C8872A" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="#96631C" stroke-width="1.5"/><line x1="10" y1="10" x2="15" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="10" x2="33" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <img src="photos/jh-09.png" alt="佳赫稅務客戶餐飲實拍04" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/05.jpg" alt="佳赫稅務客戶店面實拍05" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 L24 8 L40 20 Z" fill="#96631C"/><rect x="10" y="20" width="28" height="20" fill="#C8872A"/><rect x="20" y="28" width="8" height="12" fill="#FBF8F2"/><rect x="13" y="24" width="6" height="6" fill="#FBF8F2"/><rect x="29" y="24" width="6" height="6" fill="#FBF8F2"/></svg></div>
+        <img src="photos/jh-05.png" alt="佳赫稅務客戶餐飲實拍05" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/06.jpg" alt="佳赫稅務客戶餐點實拍06" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="15" fill="none" stroke="#C8872A" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="#96631C" stroke-width="1.5"/><line x1="10" y1="10" x2="15" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="10" x2="33" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <img src="photos/jh-06.png" alt="佳赫稅務客戶餐飲實拍06" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/07.jpg" alt="佳赫稅務客戶店面實拍07" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 L24 8 L40 20 Z" fill="#96631C"/><rect x="10" y="20" width="28" height="20" fill="#C8872A"/><rect x="20" y="28" width="8" height="12" fill="#FBF8F2"/><rect x="13" y="24" width="6" height="6" fill="#FBF8F2"/><rect x="29" y="24" width="6" height="6" fill="#FBF8F2"/></svg></div>
+        <img src="photos/jh-02.png" alt="佳赫稅務客戶餐飲實拍07" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/08.jpg" alt="佳赫稅務客戶餐點實拍08" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="15" fill="none" stroke="#C8872A" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="#96631C" stroke-width="1.5"/><line x1="10" y1="10" x2="15" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="10" x2="33" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <img src="photos/jh-06.png" alt="佳赫稅務客戶餐飲實拍08" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/09.jpg" alt="佳赫稅務客戶店面實拍09" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 L24 8 L40 20 Z" fill="#96631C"/><rect x="10" y="20" width="28" height="20" fill="#C8872A"/><rect x="20" y="28" width="8" height="12" fill="#FBF8F2"/><rect x="13" y="24" width="6" height="6" fill="#FBF8F2"/><rect x="29" y="24" width="6" height="6" fill="#FBF8F2"/></svg></div>
+        <img src="photos/jh-05.png" alt="佳赫稅務客戶餐飲實拍09" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/10.jpg" alt="佳赫稅務客戶餐點實拍10" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="15" fill="none" stroke="#C8872A" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="#96631C" stroke-width="1.5"/><line x1="10" y1="10" x2="15" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="10" x2="33" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <img src="photos/jh-09.png" alt="佳赫稅務客戶餐飲實拍10" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/11.jpg" alt="佳赫稅務客戶店面實拍11" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 L24 8 L40 20 Z" fill="#96631C"/><rect x="10" y="20" width="28" height="20" fill="#C8872A"/><rect x="20" y="28" width="8" height="12" fill="#FBF8F2"/><rect x="13" y="24" width="6" height="6" fill="#FBF8F2"/><rect x="29" y="24" width="6" height="6" fill="#FBF8F2"/></svg></div>
+        <img src="photos/jh-07.png" alt="佳赫稅務客戶餐飲實拍11" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/12.jpg" alt="佳赫稅務客戶餐點實拍12" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="15" fill="none" stroke="#C8872A" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="#96631C" stroke-width="1.5"/><line x1="10" y1="10" x2="15" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="10" x2="33" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <img src="photos/jh-05.png" alt="佳赫稅務客戶餐飲實拍12" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/13.jpg" alt="佳赫稅務客戶店面實拍13" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 L24 8 L40 20 Z" fill="#96631C"/><rect x="10" y="20" width="28" height="20" fill="#C8872A"/><rect x="20" y="28" width="8" height="12" fill="#FBF8F2"/><rect x="13" y="24" width="6" height="6" fill="#FBF8F2"/><rect x="29" y="24" width="6" height="6" fill="#FBF8F2"/></svg></div>
+        <img src="photos/jh-10.png" alt="佳赫稅務客戶餐飲實拍13" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/14.jpg" alt="佳赫稅務客戶餐點實拍14" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="15" fill="none" stroke="#C8872A" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="#96631C" stroke-width="1.5"/><line x1="10" y1="10" x2="15" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="10" x2="33" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <img src="photos/jh-09.png" alt="佳赫稅務客戶餐飲實拍14" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/15.jpg" alt="佳赫稅務客戶店面實拍15" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 L24 8 L40 20 Z" fill="#96631C"/><rect x="10" y="20" width="28" height="20" fill="#C8872A"/><rect x="20" y="28" width="8" height="12" fill="#FBF8F2"/><rect x="13" y="24" width="6" height="6" fill="#FBF8F2"/><rect x="29" y="24" width="6" height="6" fill="#FBF8F2"/></svg></div>
+        <img src="photos/jh-04.png" alt="佳赫稅務客戶餐飲實拍15" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/16.jpg" alt="佳赫稅務客戶餐點實拍16" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="15" fill="none" stroke="#C8872A" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="#96631C" stroke-width="1.5"/><line x1="10" y1="10" x2="15" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="10" x2="33" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <img src="photos/jh-01.png" alt="佳赫稅務客戶餐飲實拍16" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/17.jpg" alt="佳赫稅務客戶店面實拍17" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 L24 8 L40 20 Z" fill="#96631C"/><rect x="10" y="20" width="28" height="20" fill="#C8872A"/><rect x="20" y="28" width="8" height="12" fill="#FBF8F2"/><rect x="13" y="24" width="6" height="6" fill="#FBF8F2"/><rect x="29" y="24" width="6" height="6" fill="#FBF8F2"/></svg></div>
+        <img src="photos/jh-10.png" alt="佳赫稅務客戶餐飲實拍17" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/18.jpg" alt="佳赫稅務客戶餐點實拍18" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="15" fill="none" stroke="#C8872A" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="#96631C" stroke-width="1.5"/><line x1="10" y1="10" x2="15" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="10" x2="33" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <img src="photos/jh-11.png" alt="佳赫稅務客戶餐飲實拍18" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/19.jpg" alt="佳赫稅務客戶店面實拍19" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 L24 8 L40 20 Z" fill="#96631C"/><rect x="10" y="20" width="28" height="20" fill="#C8872A"/><rect x="20" y="28" width="8" height="12" fill="#FBF8F2"/><rect x="13" y="24" width="6" height="6" fill="#FBF8F2"/><rect x="29" y="24" width="6" height="6" fill="#FBF8F2"/></svg></div>
+        <img src="photos/jh-06.png" alt="佳赫稅務客戶餐飲實拍19" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/20.jpg" alt="佳赫稅務客戶餐點實拍20" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="15" fill="none" stroke="#C8872A" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="#96631C" stroke-width="1.5"/><line x1="10" y1="10" x2="15" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="10" x2="33" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <img src="photos/jh-08.png" alt="佳赫稅務客戶餐飲實拍20" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/21.jpg" alt="佳赫稅務客戶店面實拍21" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 L24 8 L40 20 Z" fill="#96631C"/><rect x="10" y="20" width="28" height="20" fill="#C8872A"/><rect x="20" y="28" width="8" height="12" fill="#FBF8F2"/><rect x="13" y="24" width="6" height="6" fill="#FBF8F2"/><rect x="29" y="24" width="6" height="6" fill="#FBF8F2"/></svg></div>
+        <img src="photos/jh-07.png" alt="佳赫稅務客戶餐飲實拍21" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/22.jpg" alt="佳赫稅務客戶餐點實拍22" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="15" fill="none" stroke="#C8872A" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="#96631C" stroke-width="1.5"/><line x1="10" y1="10" x2="15" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="10" x2="33" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <img src="photos/jh-10.png" alt="佳赫稅務客戶餐飲實拍22" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/23.jpg" alt="佳赫稅務客戶店面實拍23" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 L24 8 L40 20 Z" fill="#96631C"/><rect x="10" y="20" width="28" height="20" fill="#C8872A"/><rect x="20" y="28" width="8" height="12" fill="#FBF8F2"/><rect x="13" y="24" width="6" height="6" fill="#FBF8F2"/><rect x="29" y="24" width="6" height="6" fill="#FBF8F2"/></svg></div>
+        <img src="photos/jh-01.png" alt="佳赫稅務客戶餐飲實拍23" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/24.jpg" alt="佳赫稅務客戶餐點實拍24" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="15" fill="none" stroke="#C8872A" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="#96631C" stroke-width="1.5"/><line x1="10" y1="10" x2="15" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="10" x2="33" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <img src="photos/jh-02.png" alt="佳赫稅務客戶餐飲實拍24" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/25.jpg" alt="佳赫稅務客戶店面實拍25" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 L24 8 L40 20 Z" fill="#96631C"/><rect x="10" y="20" width="28" height="20" fill="#C8872A"/><rect x="20" y="28" width="8" height="12" fill="#FBF8F2"/><rect x="13" y="24" width="6" height="6" fill="#FBF8F2"/><rect x="29" y="24" width="6" height="6" fill="#FBF8F2"/></svg></div>
+        <img src="photos/jh-03.png" alt="佳赫稅務客戶餐飲實拍25" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/26.jpg" alt="佳赫稅務客戶餐點實拍26" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="15" fill="none" stroke="#C8872A" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="#96631C" stroke-width="1.5"/><line x1="10" y1="10" x2="15" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="10" x2="33" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <img src="photos/jh-08.png" alt="佳赫稅務客戶餐飲實拍26" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/27.jpg" alt="佳赫稅務客戶店面實拍27" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 L24 8 L40 20 Z" fill="#96631C"/><rect x="10" y="20" width="28" height="20" fill="#C8872A"/><rect x="20" y="28" width="8" height="12" fill="#FBF8F2"/><rect x="13" y="24" width="6" height="6" fill="#FBF8F2"/><rect x="29" y="24" width="6" height="6" fill="#FBF8F2"/></svg></div>
+        <img src="photos/jh-03.png" alt="佳赫稅務客戶餐飲實拍27" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/28.jpg" alt="佳赫稅務客戶餐點實拍28" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="15" fill="none" stroke="#C8872A" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="#96631C" stroke-width="1.5"/><line x1="10" y1="10" x2="15" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="10" x2="33" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <img src="photos/jh-07.png" alt="佳赫稅務客戶餐飲實拍28" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/29.jpg" alt="佳赫稅務客戶店面實拍29" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8 20 L24 8 L40 20 Z" fill="#96631C"/><rect x="10" y="20" width="28" height="20" fill="#C8872A"/><rect x="20" y="28" width="8" height="12" fill="#FBF8F2"/><rect x="13" y="24" width="6" height="6" fill="#FBF8F2"/><rect x="29" y="24" width="6" height="6" fill="#FBF8F2"/></svg></div>
+        <img src="photos/jh-02.png" alt="佳赫稅務客戶餐飲實拍29" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="photos/30.jpg" alt="佳赫稅務客戶餐點實拍30" loading="lazy" onerror="this.remove()">
-        <div class="gallery-fallback"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="15" fill="none" stroke="#C8872A" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="#96631C" stroke-width="1.5"/><line x1="10" y1="10" x2="15" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="10" x2="33" y2="15" stroke="#6B5F52" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <img src="photos/jh-11.png" alt="佳赫稅務客戶餐飲實拍30" loading="lazy">
       </div>
     </div>
-    <div class="gallery-note">照片將於商品拍攝完成後,依檔名01至30.jpg放入photos資料夾即自動顯示</div>
+    <div class="gallery-note">目前為示意排版,正式照片將於現場拍攝完成後替換</div>
   </div>
 
   <div class="closing">
