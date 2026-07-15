@@ -106,16 +106,29 @@
     animation: progressFill 8s ease-in-out infinite;
   }
   .map-svg{ width: 100%; height: auto; display: block; margin-top: 1rem; border-radius: 6px; overflow: hidden; }
-  .map-land{ fill: #F2E6C6; }
-  .road-highway-casing{ stroke: #96AFC6; stroke-width: 11; fill: none; stroke-linecap: round; }
-  .road-highway{ stroke: #BBD1E3; stroke-width: 7; fill: none; stroke-linecap: round; }
-  .road-main-casing{ stroke: #E8B663; stroke-width: 7; fill: none; stroke-linecap: round; }
-  .road-main{ stroke: #FBD98B; stroke-width: 4.5; fill: none; stroke-linecap: round; }
-  .road-local-casing{ stroke: #DCCFA6; stroke-width: 3.5; fill: none; stroke-linecap: round; }
-  .road-local{ stroke: #FFFFFF; stroke-width: 2; fill: none; stroke-linecap: round; }
+  .map-bg{ fill: #F0E4D2; }
+  .zone{ fill: #A9C5C0; }
+  .zone-alt{ fill: #9DBCB7; }
+  .tree-leaf{ fill: #A67C4E; }
+  .tree-trunk{ stroke: #7A5C3E; stroke-width: 2; stroke-linecap: round; }
+  .mini-roof{ fill: #D9A648; }
+  .mini-wall{ fill: #FBF3E4; }
+
+  .pin{
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center bottom;
+  }
+  .pin1{ animation: pinDrop1 8s ease-out infinite; }
+  .pin2{ animation: pinDrop2 8s ease-out infinite; }
+  .pin3{ animation: pinDrop3 8s ease-out infinite; }
+  .pin4{ animation: pinDrop4 8s ease-out infinite; }
+  .pin5{ animation: pinDrop5 8s ease-out infinite; }
+  .pin6{ animation: pinDrop6 8s ease-out infinite; }
+
   .plot{
     fill: none;
-    stroke: var(--pin-gray);
+    stroke: #8FA9A4;
     stroke-width: 1.5;
     stroke-dasharray: 4 4;
   }
@@ -160,6 +173,42 @@
     0%, 57% { opacity: 0; }
     59%, 95% { opacity: 1; }
     97%, 100% { opacity: 0; }
+  }
+  @keyframes pinDrop1{
+    0%, 5% { opacity: 0; transform: translateY(-8px); }
+    11% { opacity: 1; transform: translateY(0); }
+    96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-8px); }
+  }
+  @keyframes pinDrop2{
+    0%, 13% { opacity: 0; transform: translateY(-8px); }
+    19% { opacity: 1; transform: translateY(0); }
+    96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-8px); }
+  }
+  @keyframes pinDrop3{
+    0%, 21% { opacity: 0; transform: translateY(-8px); }
+    27% { opacity: 1; transform: translateY(0); }
+    96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-8px); }
+  }
+  @keyframes pinDrop4{
+    0%, 29% { opacity: 0; transform: translateY(-8px); }
+    35% { opacity: 1; transform: translateY(0); }
+    96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-8px); }
+  }
+  @keyframes pinDrop5{
+    0%, 37% { opacity: 0; transform: translateY(-8px); }
+    43% { opacity: 1; transform: translateY(0); }
+    96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-8px); }
+  }
+  @keyframes pinDrop6{
+    0%, 45% { opacity: 0; transform: translateY(-8px); }
+    51% { opacity: 1; transform: translateY(0); }
+    96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-8px); }
   }
   @keyframes shopPop{
     0%, 73% { opacity: 0; transform: scale(0); }
@@ -406,62 +455,130 @@
     </div>
     <div class="progress-track"><div class="progress-fill"></div></div>
 
-    <svg class="map-svg" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="類似Google地圖風格的街道背景,登記進度推進到100%時,地圖上蹦出新店面,並有人潮聚集過去的示意圖">
-      <rect class="map-land" x="0" y="0" width="400" height="240"/>
+    <svg class="map-svg" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="插畫風格社區地圖,定位標由上往下依序出現,最後蹦出3D可愛風格新店面並有人群聚集過去的示意圖">
+      <defs>
+        <linearGradient id="roofGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#E8C077"/>
+          <stop offset="1" stop-color="#C9924A"/>
+        </linearGradient>
+        <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#FFFDF7"/>
+          <stop offset="1" stop-color="#EDE0C8"/>
+        </linearGradient>
+        <linearGradient id="wallSideGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#D9CBA8"/>
+          <stop offset="1" stop-color="#C7B78F"/>
+        </linearGradient>
+        <radialGradient id="personGrad" cx="0.3" cy="0.3" r="0.85">
+          <stop offset="0" stop-color="#33587A"/>
+          <stop offset="1" stop-color="#16293B"/>
+        </radialGradient>
+        <linearGradient id="pinGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#2E5170"/>
+          <stop offset="1" stop-color="#16293B"/>
+        </linearGradient>
+      </defs>
 
-      <path class="road-highway-casing" d="M-10 0 L120 240"/>
-      <path class="road-highway" d="M-10 0 L120 240"/>
+      <rect class="map-bg" x="0" y="0" width="400" height="240"/>
 
-      <path class="road-main-casing" d="M0 175 C90 178, 230 162, 400 172"/>
-      <path class="road-main" d="M0 175 C90 178, 230 162, 400 172"/>
-      <path class="road-main-casing" d="M0 222 C110 227, 260 215, 400 220"/>
-      <path class="road-main" d="M0 222 C110 227, 260 215, 400 220"/>
+      <polygon class="zone" points="18,18 168,14 154,92 14,96"/>
+      <polygon class="zone-alt" points="184,14 386,18 372,94 168,98"/>
+      <polygon class="zone-alt" points="14,112 158,108 150,186 10,190"/>
+      <polygon class="zone" points="174,110 386,106 382,188 164,190"/>
+      <polygon class="zone" points="14,206 158,202 150,230 14,230"/>
+      <polygon class="zone-alt" points="174,204 386,202 386,230 168,230"/>
 
-      <path class="road-local-casing" d="M150 -10 L165 250"/>
-      <path class="road-local" d="M150 -10 L165 250"/>
-      <path class="road-local-casing" d="M230 -10 L215 250"/>
-      <path class="road-local" d="M230 -10 L215 250"/>
-      <path class="road-local-casing" d="M320 -10 L300 130"/>
-      <path class="road-local" d="M320 -10 L300 130"/>
-      <path class="road-local-casing" d="M-10 60 L400 45"/>
-      <path class="road-local" d="M-10 60 L400 45"/>
-      <path class="road-local-casing" d="M-10 105 L200 98 L400 118"/>
-      <path class="road-local" d="M-10 105 L200 98 L400 118"/>
-      <path class="road-local-casing" d="M60 175 L75 250"/>
-      <path class="road-local" d="M60 175 L75 250"/>
-      <path class="road-local-casing" d="M340 172 L355 250"/>
-      <path class="road-local" d="M340 172 L355 250"/>
+      <g>
+        <line x1="46" y1="34" x2="46" y2="46" class="tree-trunk"/>
+        <circle cx="46" cy="28" r="8" class="tree-leaf"/>
+        <line x1="356" y1="34" x2="356" y2="46" class="tree-trunk"/>
+        <circle cx="356" cy="28" r="8" class="tree-leaf"/>
+        <line x1="118" y1="150" x2="118" y2="162" class="tree-trunk"/>
+        <circle cx="118" cy="144" r="7" class="tree-leaf"/>
+      </g>
+      <g>
+        <rect x="330" y="150" width="20" height="16" class="mini-wall"/>
+        <path d="M327 150 L340 138 L353 150 Z" class="mini-roof"/>
+      </g>
+      <g>
+        <rect x="60" y="212" width="18" height="14" class="mini-wall"/>
+        <path d="M57 212 L69 201 L81 212 Z" class="mini-roof"/>
+      </g>
+
+      <g class="pin pin1">
+        <circle cx="90" cy="45" r="8" fill="url(#pinGrad)"/>
+        <path d="M85 51 L90 60 L95 51 Z" fill="url(#pinGrad)"/>
+        <text x="90" y="48" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" font-weight="700" fill="#F0E4D2">A</text>
+      </g>
+      <g class="pin pin2">
+        <circle cx="235" cy="42" r="8" fill="url(#pinGrad)"/>
+        <path d="M230 48 L235 57 L240 48 Z" fill="url(#pinGrad)"/>
+        <text x="235" y="45" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" font-weight="700" fill="#F0E4D2">B</text>
+      </g>
+      <g class="pin pin3">
+        <circle cx="58" cy="148" r="8" fill="url(#pinGrad)"/>
+        <path d="M53 154 L58 163 L63 154 Z" fill="url(#pinGrad)"/>
+        <text x="58" y="151" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" font-weight="700" fill="#F0E4D2">C</text>
+      </g>
+      <g class="pin pin4">
+        <circle cx="340" cy="148" r="8" fill="url(#pinGrad)"/>
+        <path d="M335 154 L340 163 L345 154 Z" fill="url(#pinGrad)"/>
+        <text x="340" y="151" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" font-weight="700" fill="#F0E4D2">D</text>
+      </g>
+      <g class="pin pin5">
+        <circle cx="80" cy="218" r="8" fill="url(#pinGrad)"/>
+        <path d="M75 224 L80 233 L85 224 Z" fill="url(#pinGrad)"/>
+        <text x="80" y="221" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" font-weight="700" fill="#F0E4D2">E</text>
+      </g>
+      <g class="pin pin6">
+        <circle cx="310" cy="218" r="8" fill="url(#pinGrad)"/>
+        <path d="M305 224 L310 233 L315 224 Z" fill="url(#pinGrad)"/>
+        <text x="310" y="221" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" font-weight="700" fill="#F0E4D2">F</text>
+      </g>
 
       <rect class="plot" x="252" y="52" width="62" height="50" rx="3"/>
 
       <g class="shop-icon">
-        <rect x="260" y="74" width="46" height="28" fill="#C8872A"/>
-        <path d="M256 74 L283 52 L310 74 Z" fill="#96631C"/>
-        <rect x="278" y="83" width="12" height="19" fill="#FBF8F2"/>
-        <rect x="264" y="80" width="8" height="8" fill="#FBF8F2"/>
-        <rect x="296" y="80" width="8" height="8" fill="#FBF8F2"/>
+        <ellipse cx="283" cy="104" rx="26" ry="5" fill="#16293B" opacity="0.15"/>
+        <path d="M300 66 L312 72 L312 98 L300 92 Z" fill="url(#wallSideGrad)"/>
+        <rect x="260" y="66" width="40" height="30" rx="4" fill="url(#wallGrad)"/>
+        <path d="M300 66 L312 72 L296 50 L284 44 Z" fill="url(#roofGrad)" opacity="0.9"/>
+        <path d="M256 66 L283 42 L300 66 Z" fill="url(#roofGrad)"/>
+        <circle cx="269" cy="76" r="3.5" fill="#FBF3E4" stroke="#16293B" stroke-width="1"/>
+        <circle cx="291" cy="76" r="3.5" fill="#FBF3E4" stroke="#16293B" stroke-width="1"/>
+        <rect x="277" y="82" width="12" height="14" rx="3" fill="url(#pinGrad)"/>
+        <circle cx="286" cy="89" r="1" fill="#D9A648"/>
+        <line x1="283" y1="42" x2="283" y2="32" stroke="#7A5C3E" stroke-width="1.5"/>
+        <path d="M283 32 L293 35 L283 38 Z" fill="#C9924A"/>
+        <path d="M320 58 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2 Z" fill="#D9A648" opacity="0.85"/>
       </g>
 
       <g class="people p1">
-        <circle cx="234" cy="115" r="5" fill="#6B5F52"/>
-        <path d="M227 130 Q234 118 241 130 Z" fill="#6B5F52"/>
+        <ellipse cx="234" cy="133" rx="7" ry="2.2" fill="#16293B" opacity="0.15"/>
+        <path d="M225 130 Q234 116 243 130 Q243 138 234 138 Q225 138 225 130 Z" fill="url(#personGrad)"/>
+        <circle cx="234" cy="115" r="6" fill="url(#personGrad)"/>
+        <circle cx="232" cy="113" r="1.2" fill="#F0E4D2" opacity="0.75"/>
       </g>
       <g class="people p2">
-        <circle cx="332" cy="115" r="5" fill="#6B5F52"/>
-        <path d="M325 130 Q332 118 339 130 Z" fill="#6B5F52"/>
+        <ellipse cx="332" cy="133" rx="7" ry="2.2" fill="#16293B" opacity="0.15"/>
+        <path d="M323 130 Q332 116 341 130 Q341 138 332 138 Q323 138 323 130 Z" fill="url(#personGrad)"/>
+        <circle cx="332" cy="115" r="6" fill="url(#personGrad)"/>
+        <circle cx="330" cy="113" r="1.2" fill="#F0E4D2" opacity="0.75"/>
       </g>
       <g class="people p3">
-        <circle cx="283" cy="130" r="5" fill="#6B5F52"/>
-        <path d="M276 145 Q283 133 290 145 Z" fill="#6B5F52"/>
+        <ellipse cx="283" cy="148" rx="7" ry="2.2" fill="#16293B" opacity="0.15"/>
+        <path d="M274 145 Q283 131 292 145 Q292 153 283 153 Q274 153 274 145 Z" fill="url(#personGrad)"/>
+        <circle cx="283" cy="130" r="6" fill="url(#personGrad)"/>
+        <circle cx="281" cy="128" r="1.2" fill="#F0E4D2" opacity="0.75"/>
       </g>
     </svg>
   </div>
 
   <div class="story">
-    <p>去年,50位剛決定開店的老闆,自己去申請設立登記。</p>
+    <p>去年,30位剛決定開店的老闆,自己去申請設立登記。</p>
     <p>流程不難,難的是申請完之後~店開了,店卻不在地圖上。客人在Google搜尋附近店家,你的招牌不存在。</p>
     <p class="pivot">商業登記辦好,Google Map同步上線,店的照片也一起就位。開店那天,客人已經找得到你。</p>
-    <p>這套流程,去年陪50組老闆走過第一步。</p>
+    <p>這套流程,去年陪30組老闆走過第一步。</p>
     <p>準備開店,或正在辦設立登記,可以先問問看,這步驟現在包不包含在裡面。</p>
   </div>
 
@@ -496,7 +613,7 @@
   </div>
 
   <div class="stat">
-    <span class="stat-number">50</span><span class="stat-unit">組</span>
+    <span class="stat-number">30</span><span class="stat-unit">組</span>
     <div class="stat-label">2025年,已陪這些老闆走過開店第一步</div>
   </div>
 
