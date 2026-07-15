@@ -106,38 +106,27 @@
     animation: progressFill 8s ease-in-out infinite;
   }
   .map-svg{ width: 100%; height: auto; display: block; margin-top: 1rem; border-radius: 6px; overflow: hidden; }
-  .map-bg{ fill: #F0E4D2; }
-  .zone{ fill: #A9C5C0; }
-  .zone-alt{ fill: #9DBCB7; }
-  .tree-leaf{ fill: #A67C4E; }
-  .tree-trunk{ stroke: #7A5C3E; stroke-width: 2; stroke-linecap: round; }
-  .mini-roof{ fill: #D9A648; }
-  .mini-wall{ fill: #FBF3E4; }
+  .map-bg{ fill: #F3E9DC; }
 
-  .pin{
+  .terrain{
     opacity: 0;
     transform-box: fill-box;
     transform-origin: center bottom;
   }
-  .pin1{ animation: pinDrop1 8s ease-out infinite; }
-  .pin2{ animation: pinDrop2 8s ease-out infinite; }
-  .pin3{ animation: pinDrop3 8s ease-out infinite; }
-  .pin4{ animation: pinDrop4 8s ease-out infinite; }
-  .pin5{ animation: pinDrop5 8s ease-out infinite; }
-  .pin6{ animation: pinDrop6 8s ease-out infinite; }
+  .drop-mountain{ animation: drop_mountain 8s cubic-bezier(.34,1.2,.64,1) infinite; }
+  .drop-hill{ animation: drop_hill 8s cubic-bezier(.34,1.2,.64,1) infinite; }
+  .drop-treeA{ animation: drop_treeA 8s cubic-bezier(.34,1.2,.64,1) infinite; }
+  .drop-treeB{ animation: drop_treeB 8s cubic-bezier(.34,1.2,.64,1) infinite; }
+  .drop-treeC{ animation: drop_treeC 8s cubic-bezier(.34,1.2,.64,1) infinite; }
+  .drop-hut1{ animation: drop_hut1 8s cubic-bezier(.34,1.2,.64,1) infinite; }
+  .drop-hut2{ animation: drop_hut2 8s cubic-bezier(.34,1.2,.64,1) infinite; }
 
-  .plot{
-    fill: none;
-    stroke: #8FA9A4;
-    stroke-width: 1.5;
-    stroke-dasharray: 4 4;
-  }
   .shop-icon{
     opacity: 0;
-    transform: scale(0);
+    transform: translateY(-170px);
     transform-box: fill-box;
-    transform-origin: center;
-    animation: shopPop 8s ease-in-out infinite;
+    transform-origin: center bottom;
+    animation: shopPop 8s cubic-bezier(.34,1.2,.64,1) infinite;
   }
   .people{
     opacity: 0;
@@ -174,48 +163,61 @@
     59%, 95% { opacity: 1; }
     97%, 100% { opacity: 0; }
   }
-  @keyframes pinDrop1{
-    0%, 5% { opacity: 0; transform: translateY(-8px); }
-    11% { opacity: 1; transform: translateY(0); }
-    96% { opacity: 1; transform: translateY(0); }
-    98%, 100% { opacity: 0; transform: translateY(-8px); }
+  @keyframes drop_mountain{
+    0%, 4% { opacity: 0; transform: translateY(-140px); }
+    9% { opacity: 1; transform: translateY(5.6px); }
+    11% { transform: translateY(-2.1px); }
+    13%, 96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-140px); }
   }
-  @keyframes pinDrop2{
-    0%, 13% { opacity: 0; transform: translateY(-8px); }
-    19% { opacity: 1; transform: translateY(0); }
-    96% { opacity: 1; transform: translateY(0); }
-    98%, 100% { opacity: 0; transform: translateY(-8px); }
+  @keyframes drop_hill{
+    0%, 12% { opacity: 0; transform: translateY(-100px); }
+    17% { opacity: 1; transform: translateY(4.0px); }
+    19% { transform: translateY(-1.5px); }
+    21%, 96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-100px); }
   }
-  @keyframes pinDrop3{
-    0%, 21% { opacity: 0; transform: translateY(-8px); }
-    27% { opacity: 1; transform: translateY(0); }
-    96% { opacity: 1; transform: translateY(0); }
-    98%, 100% { opacity: 0; transform: translateY(-8px); }
+  @keyframes drop_treeA{
+    0%, 20% { opacity: 0; transform: translateY(-90px); }
+    25% { opacity: 1; transform: translateY(3.6px); }
+    27% { transform: translateY(-1.3px); }
+    29%, 96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-90px); }
   }
-  @keyframes pinDrop4{
-    0%, 29% { opacity: 0; transform: translateY(-8px); }
-    35% { opacity: 1; transform: translateY(0); }
-    96% { opacity: 1; transform: translateY(0); }
-    98%, 100% { opacity: 0; transform: translateY(-8px); }
+  @keyframes drop_treeB{
+    0%, 28% { opacity: 0; transform: translateY(-90px); }
+    33% { opacity: 1; transform: translateY(3.6px); }
+    35% { transform: translateY(-1.3px); }
+    37%, 96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-90px); }
   }
-  @keyframes pinDrop5{
-    0%, 37% { opacity: 0; transform: translateY(-8px); }
-    43% { opacity: 1; transform: translateY(0); }
-    96% { opacity: 1; transform: translateY(0); }
-    98%, 100% { opacity: 0; transform: translateY(-8px); }
+  @keyframes drop_treeC{
+    0%, 36% { opacity: 0; transform: translateY(-90px); }
+    41% { opacity: 1; transform: translateY(3.6px); }
+    43% { transform: translateY(-1.3px); }
+    45%, 96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-90px); }
   }
-  @keyframes pinDrop6{
-    0%, 45% { opacity: 0; transform: translateY(-8px); }
-    51% { opacity: 1; transform: translateY(0); }
-    96% { opacity: 1; transform: translateY(0); }
-    98%, 100% { opacity: 0; transform: translateY(-8px); }
+  @keyframes drop_hut1{
+    0%, 44% { opacity: 0; transform: translateY(-110px); }
+    49% { opacity: 1; transform: translateY(4.4px); }
+    51% { transform: translateY(-1.6px); }
+    53%, 96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-110px); }
+  }
+  @keyframes drop_hut2{
+    0%, 52% { opacity: 0; transform: translateY(-110px); }
+    57% { opacity: 1; transform: translateY(4.4px); }
+    59% { transform: translateY(-1.6px); }
+    61%, 96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-110px); }
   }
   @keyframes shopPop{
-    0%, 73% { opacity: 0; transform: scale(0); }
-    77% { opacity: 1; transform: scale(1.3); }
-    83% { transform: scale(0.9); }
-    88%, 95% { opacity: 1; transform: scale(1); }
-    98%, 100% { opacity: 0; transform: scale(0); }
+    0%, 73% { opacity: 0; transform: translateY(-170px); }
+    79% { opacity: 1; transform: translateY(8px); }
+    84% { transform: translateY(-4px); }
+    88%, 95% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-170px); }
   }
   @keyframes people1{
     0%, 78% { opacity: 0; transform: translate(-14px, 10px); }
@@ -455,7 +457,7 @@
     </div>
     <div class="progress-track"><div class="progress-fill"></div></div>
 
-    <svg class="map-svg" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="插畫風格社區地圖,定位標由上往下依序出現,最後蹦出3D可愛風格新店面並有人群聚集過去的示意圖">
+    <svg class="map-svg" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="山丘樹木小屋等地景元素像積木一樣由空中依序落下組成地圖,最後蹦出3D可愛風格新店面並有人群聚集過去的示意圖">
       <defs>
         <linearGradient id="roofGrad" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stop-color="#E8C077"/>
@@ -477,66 +479,70 @@
           <stop offset="0" stop-color="#2E5170"/>
           <stop offset="1" stop-color="#16293B"/>
         </linearGradient>
+        <linearGradient id="mountainGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#8FA8B8"/>
+          <stop offset="1" stop-color="#5F7A8C"/>
+        </linearGradient>
+        <linearGradient id="hillGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#8FBE7C"/>
+          <stop offset="1" stop-color="#5F9A56"/>
+        </linearGradient>
+        <radialGradient id="treeGrad" cx="0.35" cy="0.3" r="0.8">
+          <stop offset="0" stop-color="#6FAE63"/>
+          <stop offset="1" stop-color="#437A42"/>
+        </radialGradient>
+        <linearGradient id="hutRoofGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#E08A64"/>
+          <stop offset="1" stop-color="#C56245"/>
+        </linearGradient>
       </defs>
 
       <rect class="map-bg" x="0" y="0" width="400" height="240"/>
 
-      <polygon class="zone" points="18,18 168,14 154,92 14,96"/>
-      <polygon class="zone-alt" points="184,14 386,18 372,94 168,98"/>
-      <polygon class="zone-alt" points="14,112 158,108 150,186 10,190"/>
-      <polygon class="zone" points="174,110 386,106 382,188 164,190"/>
-      <polygon class="zone" points="14,206 158,202 150,230 14,230"/>
-      <polygon class="zone-alt" points="174,204 386,202 386,230 168,230"/>
-
-      <g>
-        <line x1="46" y1="34" x2="46" y2="46" class="tree-trunk"/>
-        <circle cx="46" cy="28" r="8" class="tree-leaf"/>
-        <line x1="356" y1="34" x2="356" y2="46" class="tree-trunk"/>
-        <circle cx="356" cy="28" r="8" class="tree-leaf"/>
-        <line x1="118" y1="150" x2="118" y2="162" class="tree-trunk"/>
-        <circle cx="118" cy="144" r="7" class="tree-leaf"/>
-      </g>
-      <g>
-        <rect x="330" y="150" width="20" height="16" class="mini-wall"/>
-        <path d="M327 150 L340 138 L353 150 Z" class="mini-roof"/>
-      </g>
-      <g>
-        <rect x="60" y="212" width="18" height="14" class="mini-wall"/>
-        <path d="M57 212 L69 201 L81 212 Z" class="mini-roof"/>
+      <g class="terrain drop-mountain">
+        <ellipse cx="75" cy="76" rx="46" ry="8" fill="#16293B" opacity="0.12"/>
+        <path d="M20 74 L58 24 L82 50 L100 20 L132 74 Z" fill="url(#mountainGrad)"/>
+        <path d="M50 34 L58 24 L66 34 L58 40 Z" fill="#FBF7EF"/>
+        <path d="M92 32 L100 20 L108 32 L100 38 Z" fill="#FBF7EF"/>
       </g>
 
-      <g class="pin pin1">
-        <circle cx="90" cy="45" r="8" fill="url(#pinGrad)"/>
-        <path d="M85 51 L90 60 L95 51 Z" fill="url(#pinGrad)"/>
-        <text x="90" y="48" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" font-weight="700" fill="#F0E4D2">A</text>
-      </g>
-      <g class="pin pin2">
-        <circle cx="235" cy="42" r="8" fill="url(#pinGrad)"/>
-        <path d="M230 48 L235 57 L240 48 Z" fill="url(#pinGrad)"/>
-        <text x="235" y="45" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" font-weight="700" fill="#F0E4D2">B</text>
-      </g>
-      <g class="pin pin3">
-        <circle cx="58" cy="148" r="8" fill="url(#pinGrad)"/>
-        <path d="M53 154 L58 163 L63 154 Z" fill="url(#pinGrad)"/>
-        <text x="58" y="151" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" font-weight="700" fill="#F0E4D2">C</text>
-      </g>
-      <g class="pin pin4">
-        <circle cx="340" cy="148" r="8" fill="url(#pinGrad)"/>
-        <path d="M335 154 L340 163 L345 154 Z" fill="url(#pinGrad)"/>
-        <text x="340" y="151" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" font-weight="700" fill="#F0E4D2">D</text>
-      </g>
-      <g class="pin pin5">
-        <circle cx="80" cy="218" r="8" fill="url(#pinGrad)"/>
-        <path d="M75 224 L80 233 L85 224 Z" fill="url(#pinGrad)"/>
-        <text x="80" y="221" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" font-weight="700" fill="#F0E4D2">E</text>
-      </g>
-      <g class="pin pin6">
-        <circle cx="310" cy="218" r="8" fill="url(#pinGrad)"/>
-        <path d="M305 224 L310 233 L315 224 Z" fill="url(#pinGrad)"/>
-        <text x="310" y="221" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" font-weight="700" fill="#F0E4D2">F</text>
+      <g class="terrain drop-hill">
+        <ellipse cx="55" cy="200" rx="48" ry="9" fill="#16293B" opacity="0.12"/>
+        <path d="M8 195 Q10 145 55 145 Q100 145 102 195 Z" fill="url(#hillGrad)"/>
+        <path d="M20 190 Q22 160 55 158 Q88 160 90 190 Z" fill="#FFFFFF" opacity="0.12"/>
       </g>
 
-      <rect class="plot" x="228" y="66" width="112" height="72" rx="4"/>
+      <g class="terrain drop-treeA">
+        <ellipse cx="150" cy="82" rx="12" ry="3" fill="#16293B" opacity="0.15"/>
+        <rect x="147" y="66" width="6" height="14" fill="#8A6742"/>
+        <circle cx="150" cy="58" r="13" fill="url(#treeGrad)"/>
+        <circle cx="143" cy="52" r="1.6" fill="#FFFFFF" opacity="0.5"/>
+      </g>
+      <g class="terrain drop-treeB">
+        <ellipse cx="150" cy="212" rx="12" ry="3" fill="#16293B" opacity="0.15"/>
+        <rect x="147" y="196" width="6" height="14" fill="#8A6742"/>
+        <circle cx="150" cy="188" r="13" fill="url(#treeGrad)"/>
+        <circle cx="143" cy="182" r="1.6" fill="#FFFFFF" opacity="0.5"/>
+      </g>
+      <g class="terrain drop-treeC">
+        <ellipse cx="368" cy="82" rx="12" ry="3" fill="#16293B" opacity="0.15"/>
+        <rect x="365" y="66" width="6" height="14" fill="#8A6742"/>
+        <circle cx="368" cy="58" r="13" fill="url(#treeGrad)"/>
+        <circle cx="361" cy="52" r="1.6" fill="#FFFFFF" opacity="0.5"/>
+      </g>
+
+      <g class="terrain drop-hut1">
+        <ellipse cx="200" cy="228" rx="20" ry="4" fill="#16293B" opacity="0.15"/>
+        <rect x="185" y="206" width="30" height="20" rx="3" fill="url(#wallGrad)"/>
+        <path d="M180 208 Q200 186 220 208 Z" fill="url(#hutRoofGrad)"/>
+        <rect x="196" y="215" width="8" height="11" rx="2" fill="#16293B" opacity="0.85"/>
+      </g>
+      <g class="terrain drop-hut2">
+        <ellipse cx="368" cy="198" rx="20" ry="4" fill="#16293B" opacity="0.15"/>
+        <rect x="353" y="176" width="30" height="20" rx="3" fill="url(#wallGrad)"/>
+        <path d="M348 178 Q368 156 388 178 Z" fill="url(#hutRoofGrad)"/>
+        <rect x="364" y="185" width="8" height="11" rx="2" fill="#16293B" opacity="0.85"/>
+      </g>
 
       <g class="shop-icon">
         <ellipse cx="284" cy="140" rx="58" ry="13" fill="#16293B" opacity="0.14"/>
