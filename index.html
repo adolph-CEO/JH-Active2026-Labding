@@ -86,6 +86,71 @@
     .poster-hero{ min-height: 92vh; padding: 3rem 4rem 3.5rem; }
   }
 
+  /* ---------- ACT 2: 100位主視覺 ---------- */
+  .poster-act2{
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    min-height: 82vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    box-sizing: border-box;
+    background-image:
+      linear-gradient(rgba(5,3,2,0.55), rgba(5,3,2,0.72)),
+      url('media/act2-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+  .act2-num{
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 700;
+    font-size: clamp(140px, 38vw, 300px);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    margin: 0;
+    background: linear-gradient(115deg,
+      #6b4a1f 0%, #caa24a 18%, #fff3cf 32%, #caa24a 46%,
+      #4a3110 58%, #e8c877 72%, #fff3cf 82%, #a97c2f 100%);
+    background-size: 260% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmerGold 7s ease-in-out infinite;
+    filter: drop-shadow(0 8px 30px rgba(0,0,0,0.55));
+  }
+  .act2-sub{
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 500;
+    color: #FBF8F2;
+    font-size: clamp(20px, 4.5vw, 32px);
+    letter-spacing: 0.04em;
+    margin-top: -0.4rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+  .act2-desc{
+    color: rgba(251,248,242,0.85);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: clamp(13px, 2vw, 15px);
+    letter-spacing: 0.02em;
+    line-height: 1.9;
+    border-top: 1px solid rgba(202,162,74,0.4);
+    padding-top: 1.1rem;
+    margin-top: 1.6rem;
+    max-width: 460px;
+  }
+  @keyframes shimmerGold{
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  @media (min-width: 900px){
+    .poster-act2{ min-height: 92vh; }
+  }
+
   /* ---------- STORY COPY ---------- */
   .story{
     padding: 1.5rem 1.75rem 0.5rem;
@@ -324,6 +389,12 @@
   <div class="poster-eyebrow">佳赫稅務 · 百位餐飲商家開店募集</div>
   <h1 class="poster-title">登記辦好了<br><span class="accent">客人找得到你嗎</span></h1>
   <div class="poster-tagline">限量100位 · 登記送10張商業攝影 + Google Map商家設定</div>
+</section>
+
+<section class="poster-act2">
+  <div class="act2-num">100</div>
+  <div class="act2-sub">創業先行者</div>
+  <div class="act2-desc">營業設立登記 + 10張商業攝影 + Google Map商家設定<br>登記完成,客人已經可以找到你</div>
 </section>
 <div class="page">
 
