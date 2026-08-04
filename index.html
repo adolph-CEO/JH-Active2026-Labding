@@ -30,7 +30,7 @@
   .page{
     max-width: 640px;
     margin: 0 auto;
-    padding: 0 0 4rem;
+    padding: 0;
   }
 
   /* ---------- HERO ---------- */
@@ -216,21 +216,34 @@
     padding: 1rem 1.4rem;
     border-radius: 4px;
     font-family: 'Noto Serif TC', serif;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 15px;
     color: var(--paper);
     text-decoration: none;
     cursor: pointer;
+    text-align: center;
     transition: opacity 0.15s ease;
   }
   .brand-line:active{
     opacity: 0.85;
   }
-  .brand-line .line-id{
-    display:block;
-    margin-top: 0.4rem;
-    font-family: 'Space Mono', monospace;
-    font-size: 12.5px;
+  .line-note{
+    margin-top: 0.7rem;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .line-note .kw{
+    font-weight: 700;
+    color: var(--gold-deep);
+  }
+  .site-footer{
+    background: #1F2E3B;
     color: var(--paper);
+    text-align: center;
+    padding: 1.6rem 1.75rem;
+    margin-top: 3rem;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 14px;
   }
 
   @media (max-width: 420px){
@@ -469,11 +482,12 @@
     <p>首輪募集30位中。</p>
     <p class="qualify">資格:餐飲業+設立在台南</p>
     <a class="brand-line" href="https://lin.ee/SHzg03x" target="_blank" rel="noopener noreferrer">
-      佳赫稅務聯合記帳士事務所
-      <span class="line-id">點擊加入官方LINE詢問名額 →</span>
+      點擊加入官方LINE詢問名額 →
     </a>
+    <p class="line-note">加入後請輸入「<span class="kw">100商家</span>」</p>
   </div>
 
 </div>
+<footer class="site-footer">佳赫稅務聯合記帳士事務所</footer>
 </body>
 </html>
