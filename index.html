@@ -205,7 +205,12 @@
     color: var(--ink-soft);
     line-height: 1.9;
   }
+  .closing .qualify{
+    font-weight: 700;
+    color: var(--ink);
+  }
   .brand-line{
+    display: block;
     margin-top: 1.8rem;
     background: var(--gold);
     padding: 1rem 1.4rem;
@@ -213,6 +218,12 @@
     font-family: 'Noto Serif TC', serif;
     font-size: 14px;
     color: var(--paper);
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+  }
+  .brand-line:active{
+    opacity: 0.85;
   }
   .brand-line .line-id{
     display:block;
@@ -455,10 +466,12 @@
 
   <div class="closing">
     <p>準備開店,或正在辦登記,可以先問問看現在還有沒有名額。</p>
-    <div class="brand-line">
+    <p>首輪募集30位中。</p>
+    <p class="qualify">資格:餐飲業+設立在台南</p>
+    <a class="brand-line" href="https://lin.ee/SHzg03x" target="_blank" rel="noopener noreferrer">
       佳赫稅務聯合記帳士事務所
-      <span class="line-id">lin.ee/SHzg03x</span>
-    </div>
+      <span class="line-id">點擊加入官方LINE詢問名額 →</span>
+    </a>
   </div>
 
 </div>
