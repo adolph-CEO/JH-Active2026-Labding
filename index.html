@@ -189,13 +189,31 @@
 
   /* ---------- OFFER LEDGER ---------- */
   .offer{
+    position: relative;
     margin: 0 1.75rem;
     background: var(--paper);
     border: 1px solid var(--line);
     border-radius: 4px;
     overflow: hidden;
   }
+  .offer::before{
+    content: "100";
+    position: absolute;
+    right: -0.42em;
+    bottom: -0.2em;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 300;
+    font-size: clamp(160px, 34vw, 260px);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: rgba(200, 135, 42, 0.09);
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+  }
   .offer-head{
+    position: relative;
+    z-index: 1;
     padding: 1.1rem 1.4rem 0.9rem;
     background: var(--gold);
   }
@@ -213,6 +231,8 @@
     margin-top: 0.3rem;
   }
   .offer-row{
+    position: relative;
+    z-index: 1;
     display:flex;
     gap: 1rem;
     padding: 1.1rem 1.4rem;
