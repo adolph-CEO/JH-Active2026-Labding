@@ -33,7 +33,7 @@
     padding: 0;
   }
 
-  /* ---------- POSTER HERO: 電影海報式主視覺 ---------- */
+  /* ---------- POSTER HERO: 電影海報式主視覺(明亮配色) ---------- */
   .poster-hero{
     position: relative;
     width: 100vw;
@@ -45,14 +45,14 @@
     padding: 2rem 1.5rem 2.6rem;
     box-sizing: border-box;
     background-image:
-      linear-gradient(to top, rgba(8,6,4,0.95) 0%, rgba(8,6,4,0.62) 46%, rgba(8,6,4,0.12) 82%),
+      linear-gradient(to top, rgba(247,240,225,0.94) 0%, rgba(247,240,225,0.62) 44%, rgba(247,240,225,0.05) 80%),
       url('media/act1-bg.jpg');
     background-size: cover;
     background-position: center 42%;
     overflow: hidden;
   }
   .poster-eyebrow{
-    color: var(--gold);
+    color: var(--gold-deep);
     font-family: 'Space Mono', monospace;
     font-size: 12px;
     letter-spacing: 0.24em;
@@ -60,7 +60,7 @@
     margin-bottom: 0.4rem;
   }
   .trust-line{
-    color: rgba(251,248,242,0.5);
+    color: rgba(43,36,32,0.55);
     font-family: 'Space Mono', monospace;
     font-size: 10.5px;
     letter-spacing: 0.14em;
@@ -69,23 +69,23 @@
   .poster-title{
     font-family: 'Noto Serif TC', serif;
     font-weight: 700;
-    color: #FBF8F2;
+    color: var(--ink);
     font-size: clamp(34px, 11vw, 76px);
     line-height: 1.08;
     letter-spacing: -0.01em;
     margin: 0 0 1.2rem;
-    text-shadow: 0 6px 28px rgba(0,0,0,0.5);
+    text-shadow: 0 4px 18px rgba(247,240,225,0.6);
   }
   .poster-title .accent{
     display: block;
-    color: var(--gold);
+    color: var(--gold-deep);
   }
   .poster-tagline{
-    color: rgba(251,248,242,0.88);
+    color: rgba(43,36,32,0.8);
     font-family: 'Noto Sans TC', sans-serif;
     font-size: clamp(13px, 2vw, 16px);
     letter-spacing: 0.02em;
-    border-top: 1px solid rgba(251,248,242,0.3);
+    border-top: 1px solid rgba(43,36,32,0.25);
     padding-top: 0.9rem;
     max-width: 520px;
   }
@@ -93,8 +93,8 @@
     display: inline-block;
     margin-top: 1.2rem;
     padding: 0.4rem 0.85rem;
-    border: 1px solid rgba(200,135,42,0.55);
-    color: var(--gold);
+    border: 1px solid rgba(150,99,28,0.55);
+    color: var(--gold-deep);
     font-family: 'Space Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.1em;
@@ -103,7 +103,7 @@
     .poster-hero{ min-height: 92vh; padding: 3rem 4rem 3.5rem; }
   }
 
-  /* ---------- ACT 2: 100位主視覺 ---------- */
+  /* ---------- ACT 2: 100位主視覺(明亮配色) ---------- */
   .poster-act2{
     position: relative;
     width: 100vw;
@@ -117,7 +117,7 @@
     padding: 3rem 1.5rem;
     box-sizing: border-box;
     background-image:
-      linear-gradient(rgba(5,3,2,0.55), rgba(5,3,2,0.72)),
+      linear-gradient(rgba(247,240,225,0.35), rgba(247,240,225,0.55)),
       url('media/act2-bg.jpg');
     background-size: cover;
     background-position: center;
@@ -131,30 +131,30 @@
     letter-spacing: -0.02em;
     margin: 0;
     background: linear-gradient(115deg,
-      #6b4a1f 0%, #caa24a 18%, #fff3cf 32%, #caa24a 46%,
-      #4a3110 58%, #e8c877 72%, #fff3cf 82%, #a97c2f 100%);
+      #2b1c08 0%, #6b4a1f 16%, #a97c2f 30%, #4a3110 44%,
+      #1c1206 56%, #8a6023 70%, #caa24a 82%, #2b1c08 100%);
     background-size: 260% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     animation: shimmerGold 7s ease-in-out infinite;
-    filter: drop-shadow(0 8px 30px rgba(0,0,0,0.55));
+    filter: drop-shadow(0 4px 16px rgba(247,240,225,0.5));
   }
   .act2-sub{
     font-family: 'Noto Serif TC', serif;
     font-weight: 500;
-    color: #FBF8F2;
+    color: var(--ink);
     font-size: clamp(20px, 4.5vw, 32px);
     letter-spacing: 0.04em;
     margin-top: -0.4rem;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 12px rgba(247,240,225,0.6);
   }
   .live-tag{
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     margin-top: 1.4rem;
-    color: rgba(251,248,242,0.75);
+    color: rgba(43,36,32,0.65);
     font-family: 'Space Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.1em;
@@ -163,7 +163,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--gold);
+    background: var(--gold-deep);
     display: inline-block;
     animation: livePulse 2.4s ease-in-out infinite;
   }
