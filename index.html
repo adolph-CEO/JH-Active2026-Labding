@@ -3,427 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>佳赫稅務 - 商業登記,順便讓客人找得到你</title>
+<title>佳赫稅務 - 框架確認版(無視覺)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --cream: #F5F0E8;
-    --paper: #FBF8F2;
-    --ink: #2B2420;
-    --ink-soft: #6B5F52;
-    --gold: #C8872A;
-    --gold-deep: #96631C;
-    --line: #DDD3C0;
-    --pin-gray: #B9AF9E;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  body{
-    background: var(--cream);
-    color: var(--ink);
-    font-family: 'Noto Sans TC', sans-serif;
-    font-weight: 300;
-    line-height: 1.9;
-    -webkit-font-smoothing: antialiased;
-  }
-  .page{
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 0;
-  }
+  :root{ --ink:#111111; --gray:#666666; --line:#cccccc; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ background:#ffffff; color:var(--ink); font-family:'Noto Sans TC',sans-serif; font-weight:300; line-height:1.9; }
+  .wire-tag{ font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--gray); text-transform:uppercase; }
+  .page{ max-width:640px; margin:0 auto; }
 
-  /* ---------- POSTER HERO: 電影海報式主視覺(明亮配色) ---------- */
-  .poster-hero{
-    position: relative;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    min-height: 78vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 2rem 1.5rem 2.6rem;
-    box-sizing: border-box;
-    background-image:
-      linear-gradient(to top, rgba(247,240,225,0.94) 0%, rgba(247,240,225,0.62) 44%, rgba(247,240,225,0.05) 80%),
-      url('media/act1-bg.jpg');
-    background-size: cover;
-    background-position: center 42%;
-    overflow: hidden;
-  }
-  .poster-eyebrow{
-    color: var(--gold-deep);
-    font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    margin-bottom: 0.4rem;
-  }
-  .trust-line{
-    color: rgba(43,36,32,0.55);
-    font-family: 'Space Mono', monospace;
-    font-size: 10.5px;
-    letter-spacing: 0.14em;
-    margin-bottom: 1.1rem;
-  }
-  .poster-title{
-    font-family: 'Noto Serif TC', serif;
-    font-weight: 700;
-    color: var(--ink);
-    font-size: clamp(34px, 11vw, 76px);
-    line-height: 1.08;
-    letter-spacing: -0.01em;
-    margin: 0 0 1.2rem;
-    text-shadow: 0 4px 18px rgba(247,240,225,0.6);
-  }
-  .poster-title .accent{
-    display: block;
-    color: var(--gold-deep);
-  }
-  .poster-tagline{
-    color: rgba(43,36,32,0.8);
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: clamp(13px, 2vw, 16px);
-    letter-spacing: 0.02em;
-    border-top: 1px solid rgba(43,36,32,0.25);
-    padding-top: 0.9rem;
-    max-width: 520px;
-  }
-  .eligibility-badge{
-    display: inline-block;
-    margin-top: 1.2rem;
-    padding: 0.4rem 0.85rem;
-    border: 1px solid rgba(150,99,28,0.55);
-    color: var(--gold-deep);
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-  }
-  @media (min-width: 900px){
-    .poster-hero{ min-height: 92vh; padding: 3rem 4rem 3.5rem; }
-  }
+  .poster-hero{ padding:3rem 1.5rem; border-bottom:1px dashed var(--line); text-align:center; }
+  .poster-eyebrow{ font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.2em; color:var(--gray); margin-bottom:0.4rem; }
+  .trust-line{ font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.1em; color:#999999; margin-bottom:0.9rem; }
+  .poster-title{ font-family:'Noto Serif TC',serif; font-weight:700; font-size:clamp(30px,9vw,52px); line-height:1.15; margin:0 0 1.1rem; }
+  .poster-title .accent{ display:block; }
+  .poster-tagline{ font-family:'Noto Sans TC',sans-serif; font-size:15px; color:var(--gray); border-top:1px solid var(--line); padding-top:0.9rem; max-width:420px; margin:0 auto; }
+  .eligibility-badge{ display:inline-block; border:1px solid var(--ink); padding:0.3rem 0.7rem; font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:0.08em; margin-top:1.1rem; }
 
-  /* ---------- ACT 2: 100位主視覺(明亮配色) ---------- */
-  .poster-act2{
-    position: relative;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    min-height: 82vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 3rem 1.5rem;
-    box-sizing: border-box;
-    background-image:
-      linear-gradient(rgba(247,240,225,0.35), rgba(247,240,225,0.55)),
-      url('media/act2-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-  }
-  .act2-num{
-    font-family: 'Noto Serif TC', serif;
-    font-weight: 700;
-    font-size: clamp(140px, 38vw, 300px);
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-    margin: 0;
-    background-image: url('photos/real-11.jpg?v=2');
-    background-size: 180% auto;
-    background-position: 0% center;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: panPhoto 16s ease-in-out infinite alternate;
-    filter: saturate(1.15) contrast(1.05) drop-shadow(0 6px 20px rgba(43,36,32,0.35));
-  }
-  .act2-sub{
-    font-family: 'Noto Serif TC', serif;
-    font-weight: 500;
-    color: var(--ink);
-    font-size: clamp(20px, 4.5vw, 32px);
-    letter-spacing: 0.04em;
-    margin-top: -0.4rem;
-    text-shadow: 0 2px 12px rgba(247,240,225,0.6);
-  }
-  .live-tag{
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1.4rem;
-    color: rgba(43,36,32,0.65);
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-  }
-  .live-tag .dot{
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--gold-deep);
-    display: inline-block;
-    animation: livePulse 2.4s ease-in-out infinite;
-  }
-  @keyframes livePulse{
-    0%, 100% { opacity: 0.35; }
-    50% { opacity: 1; }
-  }
-  @keyframes panPhoto{
-    0% { background-position: 0% center; }
-    100% { background-position: 100% center; }
-  }
-  @media (min-width: 900px){
-    .poster-act2{ min-height: 92vh; }
-  }
+  .poster-act2{ padding:3.5rem 1.5rem; border-bottom:1px dashed var(--line); text-align:center; }
+  .act2-num{ font-family:'Noto Serif TC',serif; font-weight:700; font-size:clamp(90px,26vw,180px); line-height:0.95; }
+  .act2-sub{ font-family:'Noto Serif TC',serif; font-weight:500; font-size:clamp(18px,4vw,26px); margin-top:-0.2rem; }
+  .live-tag{ display:inline-flex; align-items:center; gap:0.4rem; font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:0.08em; color:var(--gray); margin-top:0.9rem; }
+  .live-tag .dot{ width:6px; height:6px; border-radius:50%; background:var(--ink); display:inline-block; }
 
-  /* ---------- STORY COPY ---------- */
-  .story{
-    padding: 3.6rem 1.75rem 0.5rem;
-    font-size: 17px;
-    line-height: 2;
-    color: var(--ink);
-  }
-  .story p{
-    margin: 0 0 1.5rem;
-  }
-  .story p:last-child{ margin-bottom: 0; }
-  .story .lede{
-    font-family: 'Noto Serif TC', serif;
-    font-size: 19px;
-    font-weight: 500;
-    color: var(--ink);
-  }
-  .story .pivot{
-    font-family: 'Noto Serif TC', serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--gold-deep);
-    line-height: 2.05;
-  }
-  .story .hl{
-    color: var(--gold-deep);
-    font-weight: 700;
-  }
+  .story{ padding:2.5rem 1.75rem 0.5rem; font-size:17px; line-height:2; }
+  .story p{ margin:0 0 1.5rem; }
+  .story .lede{ font-family:'Noto Serif TC',serif; font-size:19px; font-weight:500; }
 
-  .divider{
-    width: 48px;
-    height: 1px;
-    background: var(--line);
-    margin: 2.4rem auto;
-  }
+  .divider{ width:48px; height:1px; background:var(--line); margin:2.4rem auto; }
 
-  /* ---------- OFFER LEDGER ---------- */
-  .offer{
-    position: relative;
-    margin: 0 1.75rem;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  .offer::before{
-    content: "100";
-    position: absolute;
-    right: -0.42em;
-    bottom: -0.2em;
-    font-family: 'Noto Serif TC', serif;
-    font-weight: 300;
-    font-size: clamp(160px, 34vw, 260px);
-    line-height: 1;
-    letter-spacing: -0.05em;
-    color: rgba(200, 135, 42, 0.09);
-    z-index: 0;
-    pointer-events: none;
-    user-select: none;
-  }
-  .offer-head{
-    position: relative;
-    z-index: 1;
-    padding: 1.1rem 1.4rem 0.9rem;
-    background: var(--gold);
-  }
-  .offer-head .label{
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: var(--paper);
-    letter-spacing: 0.08em;
-  }
-  .offer-head .title{
-    font-family: 'Noto Serif TC', serif;
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--paper);
-    margin-top: 0.3rem;
-  }
-  .offer-row{
-    position: relative;
-    z-index: 1;
-    display:flex;
-    gap: 1rem;
-    padding: 1.1rem 1.4rem;
-    border-bottom: 1px solid var(--line);
-    border-left: 3px solid var(--gold);
-    align-items: flex-start;
-  }
-  .offer-row:last-child{ border-bottom: none; }
-  .offer-num{
-    font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    color: var(--gold);
-    padding-top: 2px;
-    min-width: 20px;
-  }
-  .offer-body .offer-title{
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--ink);
-  }
-  .offer-body .offer-desc{
-    font-size: 13.5px;
-    color: var(--ink-soft);
-    margin-top: 0.2rem;
-    line-height: 1.7;
-  }
+  .offer{ margin:0 1.75rem; border:1px solid var(--line); }
+  .offer-head{ padding:1.1rem 1.4rem 0.9rem; border-bottom:1px solid var(--line); }
+  .offer-head .label{ font-family:'Space Mono',monospace; font-size:11px; color:var(--gray); }
+  .offer-head .title{ font-family:'Noto Serif TC',serif; font-size:18px; font-weight:500; margin-top:0.3rem; }
+  .offer-row{ display:flex; gap:1rem; padding:1.1rem 1.4rem; border-bottom:1px solid var(--line); }
+  .offer-row:last-child{ border-bottom:none; }
+  .offer-num{ font-family:'Space Mono',monospace; font-size:13px; color:var(--gray); min-width:20px; }
+  .offer-title{ font-size:15px; font-weight:500; }
+  .offer-desc{ font-size:13.5px; color:var(--gray); margin-top:0.2rem; line-height:1.7; }
 
-  /* ---------- CLOSING ---------- */
-  .closing{
-    padding: 2.6rem 1.75rem 0;
-    text-align: center;
-  }
-  .closing p{
-    font-size: 15px;
-    color: var(--ink-soft);
-    line-height: 1.9;
-  }
-  .closing .qualify{
-    font-weight: 700;
-    color: var(--ink);
-  }
-  .brand-line{
-    display: block;
-    margin-top: 1.8rem;
-    background: var(--gold);
-    padding: 1rem 1.4rem;
-    border-radius: 4px;
-    font-family: 'Noto Serif TC', serif;
-    font-weight: 500;
-    font-size: 15px;
-    color: var(--paper);
-    text-decoration: none;
-    cursor: pointer;
-    text-align: center;
-    transition: opacity 0.15s ease;
-  }
-  .brand-line:active{
-    opacity: 0.85;
-  }
-  .line-note{
-    margin-top: 0.7rem;
-    font-size: 13px;
-    color: var(--ink-soft);
-  }
-  .line-note .kw{
-    font-weight: 700;
-    color: var(--gold-deep);
-  }
-  .site-footer{
-    background: #1F2E3B;
-    color: var(--paper);
-    text-align: center;
-    padding: 1.6rem 1.75rem;
-    margin-top: 3rem;
-    font-family: 'Noto Serif TC', serif;
-    font-size: 14px;
-  }
+  .gallery{ margin:2.8rem 1.75rem 0; }
+  .gallery-head{ padding:1.1rem 1.4rem 0.9rem; border:1px solid var(--line); border-bottom:none; }
+  .gallery-head .label{ font-family:'Space Mono',monospace; font-size:11px; color:var(--gray); }
+  .gallery-head .title{ font-family:'Noto Serif TC',serif; font-size:18px; font-weight:500; margin-top:0.3rem; }
+  .gallery-placeholder{ border:1px dashed var(--line); padding:3rem 1.5rem; text-align:center; font-family:'Space Mono',monospace; font-size:13px; color:var(--gray); letter-spacing:0.05em; }
 
-  /* ---------- GALLERY: 店面與餐點實拍 ---------- */
-  .gallery{
-    margin: 2.8rem 1.75rem 0;
-  }
-  .gallery-head{
-    padding: 1.1rem 1.4rem 0.9rem;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-bottom: none;
-    border-radius: 4px 4px 0 0;
-  }
-  .gallery-head .label{
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: var(--gold-deep);
-    letter-spacing: 0.08em;
-  }
-  .gallery-head .title{
-    font-family: 'Noto Serif TC', serif;
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--ink);
-    margin-top: 0.3rem;
-  }
-  .gallery-grid{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 3px;
-    background: var(--line);
-    border: 1px solid var(--line);
-    border-top: none;
-  }
-  @media (max-width: 480px){
-    .gallery-grid{ grid-template-columns: repeat(3, 1fr); }
-  }
-  .gallery-item{
-    position: relative;
-    aspect-ratio: 1 / 1;
-    background: var(--paper);
-    overflow: hidden;
-  }
-  .gallery-item img{
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .gallery-fallback{
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--paper);
-  }
-  .gallery-fallback svg{ width: 34%; height: 34%; }
-  .gallery-note{
-    font-size: 12.5px;
-    color: var(--ink-soft);
-    text-align: center;
-    padding: 0.9rem 1rem 0;
-    line-height: 1.7;
-  }
+  .closing{ padding:2.6rem 1.75rem 0; text-align:center; }
+  .closing p{ font-size:15px; color:var(--gray); line-height:1.9; }
+  .closing .qualify{ font-weight:700; color:var(--ink); }
+  .brand-line{ display:block; margin-top:1.8rem; padding:1rem 1.4rem; border:1px solid var(--ink); text-decoration:none; color:var(--ink); font-family:'Noto Serif TC',serif; font-weight:500; font-size:15px; text-align:center; }
+  .line-note{ margin-top:0.7rem; font-size:13px; color:var(--gray); }
+
+  .site-footer{ border-top:1px dashed var(--line); text-align:center; padding:1.6rem 1.75rem; margin-top:3rem; font-family:'Noto Serif TC',serif; font-size:14px; color:var(--gray); }
 </style>
 </head>
 <body>
-<section class="poster-hero">
-  <div class="poster-eyebrow">佳赫稅務 · 百位餐飲商家開店募集</div>
-  <div class="trust-line">35年 · 三位執業記帳士</div>
-  <h1 class="poster-title">登記辦好了<br><span class="accent">客人找得到你嗎</span></h1>
-  <div class="poster-tagline">找得到,才算真的開店。</div>
-  <div class="eligibility-badge">限台南 · 餐飲業</div>
-</section>
-
-<section class="poster-act2">
-  <div class="act2-num">100</div>
-  <div class="act2-sub">先被看見的100家</div>
-  <div class="live-tag"><span class="dot"></span>即日起,額滿為止</div>
-</section>
 <div class="page">
 
+  <section class="poster-hero">
+    <div class="wire-tag">[ Act 1 · 破題鉤子 ]</div><br><br>
+    <div class="poster-eyebrow">佳赫稅務 · 百位餐飲商家開店募集</div>
+    <div class="trust-line">35年 · 三位執業記帳士</div>
+    <h1 class="poster-title">登記辦好了<br><span class="accent">客人找得到你嗎</span></h1>
+    <div class="poster-tagline">找得到,才算真的開店。</div>
+    <div class="eligibility-badge">限台南 · 餐飲業</div>
+  </section>
+
+  <section class="poster-act2">
+    <div class="wire-tag">[ Act 2 · 視覺鉤子 ]</div><br><br>
+    <div class="act2-num">100</div>
+    <div class="act2-sub">先被看見的100家</div>
+    <div class="live-tag"><span class="dot"></span>即日起,額滿為止</div>
+  </section>
 
   <div class="story">
+    <div class="wire-tag">[ 故事 · 痛點鋪陳,不接解方 ]</div><br><br>
     <p class="lede">開店的老闆,很多都是自己上網辦完設立登記。</p>
     <p>流程不難,難的是登記辦好之後~店開了,地圖上,那個位置是空的。</p>
   </div>
@@ -432,26 +88,27 @@
 
   <div class="offer">
     <div class="offer-head">
+      <div class="wire-tag">[ 揭曉 · 唯一講清楚細節的區塊 ]</div>
       <div class="label">方案內容 · 限量100位</div>
       <div class="title">商業登記,一次到位</div>
     </div>
     <div class="offer-row">
       <div class="offer-num">01</div>
-      <div class="offer-body">
+      <div>
         <div class="offer-title">商業設立登記</div>
         <div class="offer-desc">找佳赫稅務辦理營業登記,流程與文件由專業處理。</div>
       </div>
     </div>
     <div class="offer-row">
       <div class="offer-num">02</div>
-      <div class="offer-body">
+      <div>
         <div class="offer-title">Google Map商家設定</div>
         <div class="offer-desc">商家建檔、商品上架、服務項目上架,取得基礎SEO成效。</div>
       </div>
     </div>
     <div class="offer-row">
       <div class="offer-num">03</div>
-      <div class="offer-body">
+      <div>
         <div class="offer-title">商業攝影10張</div>
         <div class="offer-desc">到府拍攝,1.5至2小時內完成,交付10張可直接使用的商業照片。</div>
       </div>
@@ -460,136 +117,24 @@
 
   <div class="gallery">
     <div class="gallery-head">
+      <div class="wire-tag">[ 佐證 · 視覺本身,不加文字 ]</div>
       <div class="label">商業攝影</div>
       <div class="title">店面與餐點,拍攝風格參考</div>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="photos/real-01.jpg?v=2" alt="佳赫稅務客戶餐飲實拍01" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-02.jpg?v=2" alt="佳赫稅務客戶餐飲實拍02" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-03.jpg?v=2" alt="佳赫稅務客戶餐飲實拍03" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-04.jpg?v=2" alt="佳赫稅務客戶餐飲實拍04" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-05.jpg?v=2" alt="佳赫稅務客戶餐飲實拍05" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-06.jpg?v=2" alt="佳赫稅務客戶餐飲實拍06" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-07.jpg?v=2" alt="佳赫稅務客戶餐飲實拍07" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-08.jpg?v=2" alt="佳赫稅務客戶餐飲實拍08" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-09.jpg?v=2" alt="佳赫稅務客戶餐飲實拍09" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-10.jpg?v=2" alt="佳赫稅務客戶餐飲實拍10" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-11.jpg?v=2" alt="佳赫稅務客戶餐飲實拍11" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-12.jpg?v=2" alt="佳赫稅務客戶餐飲實拍12" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-13.jpg?v=2" alt="佳赫稅務客戶餐飲實拍13" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-14.jpg?v=2" alt="佳赫稅務客戶餐飲實拍14" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-15.jpg?v=2" alt="佳赫稅務客戶餐飲實拍15" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-16.jpg?v=2" alt="佳赫稅務客戶餐飲實拍16" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-17.jpg?v=2" alt="佳赫稅務客戶餐飲實拍17" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-18.jpg?v=2" alt="佳赫稅務客戶餐飲實拍18" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-19.jpg?v=2" alt="佳赫稅務客戶餐飲實拍19" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-20.jpg?v=2" alt="佳赫稅務客戶餐飲實拍20" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-21.jpg?v=2" alt="佳赫稅務客戶餐飲實拍21" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-22.jpg?v=2" alt="佳赫稅務客戶餐飲實拍22" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-23.jpg?v=2" alt="佳赫稅務客戶餐飲實拍23" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-24.jpg?v=2" alt="佳赫稅務客戶餐飲實拍24" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-25.jpg?v=2" alt="佳赫稅務客戶餐飲實拍25" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-26.jpg?v=2" alt="佳赫稅務客戶餐飲實拍26" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-27.jpg?v=2" alt="佳赫稅務客戶餐飲實拍27" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-28.jpg?v=2" alt="佳赫稅務客戶餐飲實拍28" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-29.jpg?v=2" alt="佳赫稅務客戶餐飲實拍29" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-30.jpg?v=2" alt="佳赫稅務客戶餐飲實拍30" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-31.jpg?v=2" alt="佳赫稅務客戶餐飲實拍31" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-32.jpg?v=2" alt="佳赫稅務客戶餐飲實拍32" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-33.jpg?v=2" alt="佳赫稅務客戶餐飲實拍33" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-34.jpg?v=2" alt="佳赫稅務客戶餐飲實拍34" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-35.jpg?v=2" alt="佳赫稅務客戶餐飲實拍35" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-36.jpg?v=2" alt="佳赫稅務客戶餐飲實拍36" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-37.jpg?v=2" alt="佳赫稅務客戶餐飲實拍37" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img src="photos/real-38.jpg?v=2" alt="佳赫稅務客戶餐飲實拍38" loading="lazy">
-      </div>
+    <div class="gallery-placeholder">
+      [ 相片牆 — 38張實拍照片,視覺階段再放回 ]
     </div>
-    <div class="gallery-note">實拍照片持續更新中</div>
   </div>
 
   <div class="closing">
+    <div class="wire-tag">[ 行動 · 資格+CTA ]</div><br><br>
     <p>準備開店,或正在辦登記,可以先問問看現在還有沒有名額。</p>
     <p>首輪募集30位中。</p>
     <p class="qualify">資格:餐飲業+設立在台南</p>
     <a class="brand-line" href="https://lin.ee/SHzg03x" target="_blank" rel="noopener noreferrer">
       點擊加入官方LINE,確認你的名額 →
     </a>
-    <p class="line-note">加入後請輸入「<span class="kw">100商家</span>」</p>
+    <p class="line-note">加入後請輸入「100商家」</p>
   </div>
 
 </div>
