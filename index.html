@@ -130,15 +130,14 @@
     line-height: 0.9;
     letter-spacing: -0.02em;
     margin: 0;
-    background: linear-gradient(115deg,
-      #2b1c08 0%, #6b4a1f 16%, #a97c2f 30%, #4a3110 44%,
-      #1c1206 56%, #8a6023 70%, #caa24a 82%, #2b1c08 100%);
-    background-size: 260% 100%;
+    background-image: url('photos/real-11.jpg?v=2');
+    background-size: 180% auto;
+    background-position: 0% center;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: shimmerGold 7s ease-in-out infinite;
-    filter: drop-shadow(0 4px 16px rgba(247,240,225,0.5));
+    animation: panPhoto 16s ease-in-out infinite alternate;
+    filter: saturate(1.15) contrast(1.05) drop-shadow(0 6px 20px rgba(43,36,32,0.35));
   }
   .act2-sub{
     font-family: 'Noto Serif TC', serif;
@@ -171,9 +170,9 @@
     0%, 100% { opacity: 0.35; }
     50% { opacity: 1; }
   }
-  @keyframes shimmerGold{
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+  @keyframes panPhoto{
+    0% { background-position: 0% center; }
+    100% { background-position: 100% center; }
   }
   @media (min-width: 900px){
     .poster-act2{ min-height: 92vh; }
