@@ -36,7 +36,19 @@
     border-bottom: 1px dashed var(--line);
     text-align: center;
   }
-  .poster-eyebrow{ font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.2em; color:var(--gray); margin-bottom:0.9rem; }
+  .poster-eyebrow{ font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.2em; color:var(--gray); margin-bottom:0.4rem; }
+  .trust-line{ font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.1em; color:#999999; margin-bottom:0.9rem; }
+  .eligibility-badge{
+    display:inline-block; border:1px solid var(--ink); padding:0.3rem 0.7rem;
+    font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:0.08em;
+    margin-bottom:1.1rem;
+  }
+  .live-tag{
+    display:inline-flex; align-items:center; gap:0.4rem;
+    font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:0.08em; color:var(--gray);
+    margin-top:0.6rem;
+  }
+  .live-tag .dot{ width:6px; height:6px; border-radius:50%; background:var(--ink); display:inline-block; }
   .poster-title{ font-family:'Noto Serif TC',serif; font-weight:700; font-size: clamp(30px,9vw,52px); line-height:1.15; margin:0 0 1.1rem; }
   .poster-title .accent{ display:block; }
   .poster-tagline{ font-family:'Noto Sans TC',sans-serif; font-size:15px; color:var(--gray); border-top:1px solid var(--line); padding-top:0.9rem; max-width:420px; margin:0 auto; }
@@ -107,14 +119,17 @@
   <section class="poster-hero">
     <div class="wire-tag">[ Act 1 · 破題鉤子 ]</div><br><br>
     <div class="poster-eyebrow">佳赫稅務 · 百位餐飲商家開店募集</div>
+    <div class="trust-line">35年 · 三位執業記帳士</div>
     <h1 class="poster-title">登記辦好了<br><span class="accent">客人找得到你嗎</span></h1>
     <div class="poster-tagline">找得到,才算真的開店。</div>
+    <div class="eligibility-badge">限台南 · 餐飲業</div>
   </section>
 
   <section class="poster-act2">
     <div class="wire-tag">[ Act 2 · 視覺鉤子 ]</div><br><br>
     <div class="act2-num">100</div>
     <div class="act2-sub">先被看見的100家</div>
+    <div class="live-tag"><span class="dot"></span>即日起,額滿為止</div>
   </section>
 
   <div class="story">
@@ -171,7 +186,7 @@
     <p>首輪募集30位中。</p>
     <p class="qualify">資格:餐飲業+設立在台南</p>
     <a class="brand-line" href="https://lin.ee/SHzg03x" target="_blank" rel="noopener noreferrer">
-      點擊加入官方LINE詢問名額 →
+      點擊加入官方LINE,確認你的名額 →
     </a>
     <p class="line-note">加入後請輸入「100商家」</p>
   </div>
