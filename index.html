@@ -1,143 +1,136 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>佳赫稅務 - 框架確認版(無視覺)</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  :root{ --ink:#111111; --gray:#666666; --line:#cccccc; }
-  *{ box-sizing:border-box; margin:0; padding:0; }
-  body{ background:#ffffff; color:var(--ink); font-family:'Noto Sans TC',sans-serif; font-weight:300; line-height:1.9; }
-  .wire-tag{ font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--gray); text-transform:uppercase; }
-  .page{ max-width:640px; margin:0 auto; }
-
-  .poster-hero{ padding:3rem 1.5rem; border-bottom:1px dashed var(--line); text-align:center; }
-  .poster-eyebrow{ font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.2em; color:var(--gray); margin-bottom:0.4rem; }
-  .trust-line{ font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.1em; color:#999999; margin-bottom:0.9rem; }
-  .poster-title{ font-family:'Noto Serif TC',serif; font-weight:700; font-size:clamp(30px,9vw,52px); line-height:1.15; margin:0 0 1.1rem; }
-  .poster-title .accent{ display:block; }
-  .poster-tagline{ font-family:'Noto Sans TC',sans-serif; font-size:15px; color:var(--gray); border-top:1px solid var(--line); padding-top:0.9rem; max-width:420px; margin:0 auto; }
-  .eligibility-badge{ display:inline-block; border:1px solid var(--ink); padding:0.3rem 0.7rem; font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:0.08em; margin-top:1.1rem; }
-
-  .poster-act2{ padding:3.5rem 1.5rem; border-bottom:1px dashed var(--line); text-align:center; }
-  .act2-num{ font-family:'Noto Serif TC',serif; font-weight:700; font-size:clamp(90px,26vw,180px); line-height:0.95; }
-  .act2-sub{ font-family:'Noto Serif TC',serif; font-weight:500; font-size:clamp(18px,4vw,26px); margin-top:-0.2rem; }
-  .live-tag{ display:inline-flex; align-items:center; gap:0.4rem; font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:0.08em; color:var(--gray); margin-top:0.9rem; }
-  .live-tag .dot{ width:6px; height:6px; border-radius:50%; background:var(--ink); display:inline-block; }
-
-  .story{ padding:2.5rem 1.75rem 0.5rem; font-size:17px; line-height:2; }
-  .story p{ margin:0 0 1.5rem; }
-  .story .lede{ font-family:'Noto Serif TC',serif; font-size:19px; font-weight:500; }
-
-  .divider{ width:48px; height:1px; background:var(--line); margin:2.4rem auto; }
-
-  .offer{ margin:0 1.75rem; border:1px solid var(--line); }
-  .offer-head{ padding:1.1rem 1.4rem 0.9rem; border-bottom:1px solid var(--line); }
-  .offer-head .label{ font-family:'Space Mono',monospace; font-size:11px; color:var(--gray); }
-  .offer-head .title{ font-family:'Noto Serif TC',serif; font-size:18px; font-weight:500; margin-top:0.3rem; }
-  .offer-row{ display:flex; gap:1rem; padding:1.1rem 1.4rem; border-bottom:1px solid var(--line); }
-  .offer-row:last-child{ border-bottom:none; }
-  .offer-num{ font-family:'Space Mono',monospace; font-size:13px; color:var(--gray); min-width:20px; }
-  .offer-title{ font-size:15px; font-weight:500; }
-  .offer-desc{ font-size:13.5px; color:var(--gray); margin-top:0.2rem; line-height:1.7; }
-
-  .gallery{ margin:2.8rem 1.75rem 0; }
-  .gallery-head{ padding:1.1rem 1.4rem 0.9rem; border:1px solid var(--line); border-bottom:none; }
-  .gallery-head .label{ font-family:'Space Mono',monospace; font-size:11px; color:var(--gray); }
-  .gallery-head .title{ font-family:'Noto Serif TC',serif; font-size:18px; font-weight:500; margin-top:0.3rem; }
-  .gallery-placeholder{ border:1px dashed var(--line); padding:3rem 1.5rem; text-align:center; font-family:'Space Mono',monospace; font-size:13px; color:var(--gray); letter-spacing:0.05em; }
-
-  .closing{ padding:2.6rem 1.75rem 0; text-align:center; }
-  .closing p{ font-size:15px; color:var(--gray); line-height:1.9; }
-  .closing .qualify{ font-weight:700; color:var(--ink); }
-  .brand-line{ display:block; margin-top:1.8rem; padding:1rem 1.4rem; border:1px solid var(--ink); text-decoration:none; color:var(--ink); font-family:'Noto Serif TC',serif; font-weight:500; font-size:15px; text-align:center; }
-  .line-note{ margin-top:0.7rem; font-size:13px; color:var(--gray); }
-
-  .site-footer{ border-top:1px dashed var(--line); text-align:center; padding:1.6rem 1.75rem; margin-top:3rem; font-family:'Noto Serif TC',serif; font-size:14px; color:var(--gray); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="佳赫稅務百位餐飲商家開店募集。協助台南餐飲業辦理商業設立登記，並完成 Google Map 商家設定與商業攝影。">
+  <meta name="theme-color" content="#ffffff">
+  <title>百位餐飲商家開店募集｜佳赫稅務</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="page">
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <header class="site-header">
+    <a class="brand" href="#main">佳赫稅務</a>
+    <span>台南東區・麻豆｜35年</span>
+  </header>
 
-  <section class="poster-hero">
-    <div class="wire-tag">[ Act 1 · 破題鉤子 ]</div><br><br>
-    <div class="poster-eyebrow">佳赫稅務 · 百位餐飲商家開店募集</div>
-    <div class="trust-line">35年 · 三位執業記帳士</div>
-    <h1 class="poster-title">登記辦好了<br><span class="accent">客人找得到你嗎</span></h1>
-    <div class="poster-tagline">找得到,才算真的開店。</div>
-    <div class="eligibility-badge">限台南 · 餐飲業</div>
-  </section>
-
-  <section class="poster-act2">
-    <div class="wire-tag">[ Act 2 · 視覺鉤子 ]</div><br><br>
-    <div class="act2-num">100</div>
-    <div class="act2-sub">先被看見的100家</div>
-    <div class="live-tag"><span class="dot"></span>即日起,額滿為止</div>
-  </section>
-
-  <div class="story">
-    <div class="wire-tag">[ 故事 · 痛點鋪陳,不接解方 ]</div><br><br>
-    <p class="lede">開店的老闆,很多都是自己上網辦完設立登記。</p>
-    <p>流程不難,難的是登記辦好之後~店開了,地圖上,那個位置是空的。</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="offer">
-    <div class="offer-head">
-      <div class="wire-tag">[ 揭曉 · 唯一講清楚細節的區塊 ]</div>
-      <div class="label">方案內容 · 限量100位</div>
-      <div class="title">商業登記,一次到位</div>
-    </div>
-    <div class="offer-row">
-      <div class="offer-num">01</div>
-      <div>
-        <div class="offer-title">商業設立登記</div>
-        <div class="offer-desc">找佳赫稅務辦理營業登記,流程與文件由專業處理。</div>
+  <main id="main">
+    <section class="hero section">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">佳赫稅務・台南餐飲開店募集</p>
+          <h1>登記辦好了，<br>客人找得到你嗎？</h1>
+          <p class="lead">找得到，才算真的開店。</p>
+          <div class="facts" aria-label="活動重點">
+            <span>限台南</span><span>限餐飲業</span><span>首輪30位</span>
+          </div>
+          <a class="button primary" href="https://lin.ee/SHzg03x" target="_blank" rel="noopener" data-cta="hero">確認我是否符合資格 <span>→</span></a>
+          <p class="micro">加入LINE後，輸入「<strong>100商家</strong>」即可確認</p>
+        </div>
+        <aside class="trust-card" aria-label="佳赫稅務專業資訊">
+          <div class="metric"><strong>35年</strong><p>在地稅務與記帳經驗</p></div>
+          <div class="metric"><strong>3位</strong><p>執業記帳士共同經營</p></div>
+          <div class="metric"><strong>2處</strong><p>台南東區、麻豆服務據點</p></div>
+        </aside>
       </div>
-    </div>
-    <div class="offer-row">
-      <div class="offer-num">02</div>
-      <div>
-        <div class="offer-title">Google Map商家設定</div>
-        <div class="offer-desc">商家建檔、商品上架、服務項目上架,取得基礎SEO成效。</div>
+    </section>
+
+    <section class="section problem" aria-labelledby="problem-title">
+      <div class="wrap narrow">
+        <p class="section-no">01｜你可能漏掉的一步</p>
+        <h2 id="problem-title"><span class="brush-line">店開了</span>，<br>地圖上的位置卻還是空的。</h2>
+        <p>很多老闆自己上網就能辦完設立登記。流程不一定難，難的是開店之後，沒有店面資料、沒有餐點照片，也沒有讓客人找到你的入口。</p>
+        <blockquote>登記，是合法開店的起點；<br>被找到，才是生意的起點。</blockquote><figure class="problem-objects" aria-label="咖啡店與餐車位於尚未標記商家的地圖上"><img class="problem-map" src="assets/map-streets.webp" alt="沒有商家標記的城市街道地圖" loading="lazy" decoding="async"><img class="problem-businesses" src="assets/restaurant-objects.webp?v=2" alt="咖啡店與飲料餐車的微縮場景" loading="lazy" decoding="async"></figure>
       </div>
-    </div>
-    <div class="offer-row">
-      <div class="offer-num">03</div>
-      <div>
-        <div class="offer-title">商業攝影10張</div>
-        <div class="offer-desc">到府拍攝,1.5至2小時內完成,交付10張可直接使用的商業照片。</div>
+    </section>
+
+    <section class="section offer" aria-labelledby="offer-title">
+      <div class="wrap">
+        <p class="section-no">02｜方案內容・限量100位</p>
+        <div class="section-heading">
+          <h2 id="offer-title"><span class="brush-line">商業登記＋行銷曝光</span>，<br>一次到位。</h2>
+          <p>委託佳赫辦理商業設立登記，同步完成新店被看見的第一步。</p>
+        </div>
+        <ol class="service-list">
+          <li><span>01</span><div><h3>商業設立登記</h3><p>流程、文件與申請由專業人員協助處理。</p></div></li>
+          <li><span>02</span><div><h3>Google Map 商家設定</h3><p>完成商家建檔、商品與服務項目上架，建立基礎搜尋能見度。</p></div></li>
+          <li><span>03</span><div><h3>商業攝影10張</h3><p>到店拍攝約1.5至2小時，交付10張可用於Google、社群與開幕宣傳的照片。</p></div></li>
+        </ol>
+        <div class="notice"><strong>重要活動條件</strong><p>本活動適用於委託佳赫辦理商業設立登記的台南餐飲業者。</p></div>
+        <a class="button secondary" href="https://lin.ee/SHzg03x" target="_blank" rel="noopener" data-cta="offer">查看目前是否還有名額 <span>→</span></a>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <div class="gallery">
-    <div class="gallery-head">
-      <div class="wire-tag">[ 佐證 · 視覺本身,不加文字 ]</div>
-      <div class="label">商業攝影</div>
-      <div class="title">店面與餐點,拍攝風格參考</div>
-    </div>
-    <div class="gallery-placeholder">
-      [ 相片牆 — 38張實拍照片,視覺階段再放回 ]
-    </div>
-  </div>
+    <section class="section fit" aria-labelledby="fit-title">
+      <div class="wrap">
+        <p class="section-no">03｜先確認是否適合</p>
+        <h2 id="fit-title"><span class="brush-line">名額有限</span>，<br>我們先把條件說清楚。</h2>
+        <div class="fit-grid">
+          <div class="fit-box yes"><h3>適合你，如果你：</h3><ul><li>準備在台南開設餐飲店</li><li>正在研究或準備商業登記</li><li>希望有人協助處理文件與流程</li><li>需要Google商家與開幕形象照片</li></ul></div>
+          <div class="fit-box no"><h3>目前不適合，如果你：</h3><ul><li>店家設立地點不在台南</li><li>不是餐飲相關產業</li><li>已完成登記，只想單獨索取攝影</li><li>尚未確定開店地點與時間</li></ul></div>
+        </div>
+      </div>
+    </section>
 
-  <div class="closing">
-    <div class="wire-tag">[ 行動 · 資格+CTA ]</div><br><br>
-    <p>準備開店,或正在辦登記,可以先問問看現在還有沒有名額。</p>
-    <p>首輪募集30位中。</p>
-    <p class="qualify">資格:餐飲業+設立在台南</p>
-    <a class="brand-line" href="https://lin.ee/SHzg03x" target="_blank" rel="noopener noreferrer">
-      點擊加入官方LINE,確認你的名額 →
-    </a>
-    <p class="line-note">加入後請輸入「100商家」</p>
-  </div>
+    <section class="section process" aria-labelledby="process-title">
+      <div class="wrap">
+        <p class="section-no">04｜加入後會發生什麼</p>
+        <h2 id="process-title"><span class="brush-line">四個步驟</span>，<br>把下一步走清楚。</h2>
+        <ol class="steps">
+          <li><span>1</span><div><h3>加入官方LINE</h3><p>輸入「100商家」。</p></div></li>
+          <li><span>2</span><div><h3>確認資格與名額</h3><p>提供產業、設立地點及目前籌備進度。</p></div></li>
+          <li><span>3</span><div><h3>辦理商業設立登記</h3><p>佳赫協助確認文件與申請流程。</p></div></li>
+          <li><span>4</span><div><h3>安排地圖建置與攝影</h3><p>依照實際開店進度安排後續服務。</p></div></li>
+        </ol>
+      </div>
+    </section>
 
-</div>
-<footer class="site-footer">佳赫稅務聯合記帳士事務所</footer>
+    <section class="section proof" aria-labelledby="proof-title">
+      <div class="wrap proof-grid">
+        <div><p class="section-no">05｜為什麼是佳赫</p><h2 id="proof-title"><span class="brush-line">懂規則</span>，<br>也懂開店。</h2></div>
+        <div class="proof-copy"><p>開店是一場仗。有人熟悉帳冊與規則，你才能把心力留給產品、客人與現場。</p><ul><li>35年在地稅務與記帳經驗</li><li>台南東區、麻豆兩處服務據點</li><li>三位執業記帳士共同經營</li><li>從商業設立延伸至新店基礎曝光</li></ul></div>
+      </div>
+    </section>
+
+    <section class="section faq" aria-labelledby="faq-title">
+      <div class="wrap narrow">
+        <p class="section-no">06｜常見問題</p>
+        <h2 id="faq-title"><span class="brush-line">決定以前</span>，<br>先把疑問問完。</h2>
+        <div class="accordion">
+          <details><summary>活動是否完全免費？</summary><p>Google Map商家設定與10張商業攝影屬活動贈送內容；商業設立登記的服務費用與必要規費，將由佳赫依實際案件說明。</p></details>
+          <details><summary>已經完成商業登記，也能參加嗎？</summary><p>本活動主要提供給委託佳赫辦理商業設立登記的台南餐飲業者。若已完成登記，可先加入LINE說明狀況，由團隊協助判斷其他服務方式。</p></details>
+          <details><summary>攝影何時進行？可以拍什麼？</summary><p>將依店面與開幕進度安排，到店拍攝約1.5至2小時，以店面、餐點及開幕宣傳所需內容為主。</p></details>
+          <details><summary>加入LINE之後，是否代表立即簽約？</summary><p>不會。加入後會先確認設立地點、產業類型、籌備進度及目前名額，再說明適合的辦理方式。</p></details>
+          <details><summary>首輪30位與募集100位有什麼不同？</summary><p>計畫總目標為100家，首輪先開放30位，以確保登記、地圖建置與攝影安排的服務品質。</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta" aria-labelledby="final-title">
+      <div class="wrap narrow">
+        <p class="section-no">首輪募集30位中</p>
+        <h2 id="final-title"><span class="brush-line">店準備好了</span>，<br>也讓客人找得到。</h2>
+        <p>符合台南餐飲業與商業設立需求，可以先加入LINE確認資格與名額。</p>
+        <p class="qualification">資格：<strong>餐飲業＋設立在台南</strong></p>
+        <a class="button primary" href="https://lin.ee/SHzg03x" target="_blank" rel="noopener" data-cta="final">加入官方LINE，確認我的名額 <span>→</span></a>
+        <p class="micro">加入後請輸入「<strong>100商家</strong>」</p>
+        <p class="risk">先確認資格與名額，不代表立即簽約。</p>
+      </div>
+    </section>
+  </main>
+
+  <a class="mobile-cta" href="https://lin.ee/SHzg03x" target="_blank" rel="noopener">LINE確認名額 <span>→</span></a>
+  <footer><div class="wrap"><strong>佳赫稅務聯合記帳士事務所</strong><span>台南東區・麻豆</span></div></footer>
+  <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
